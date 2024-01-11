@@ -113,11 +113,24 @@ p {
   text-align: center;
   text-decoration: none;
   color: var(--white-color);
-  /* transition: border-bottom .1s ease; */
+  position: relative;
 }
 
-.menu a:hover {
-  border-bottom: 0.1rem solid var(--white-color);
+.menu a::after {
+  content: "";
+  height: 0.1rem;
+  /* width: 50%; */
+  width: 0;
+  position: absolute;
+  background-color: var(--white-color);
+  bottom: -0.2rem;
+  left: 50%;
+  transition: width 0.5s ease;
+  transform: translateX(-50%);
+}
+
+.container a:hover::after {
+  width: 100%;
 }
 
 .menu .container {
