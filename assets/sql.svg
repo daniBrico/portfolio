@@ -1,4 +1,4 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 0C10.35 0 9 1.35 9 3V45C9 46.65 10.35 48 12 48H42C43.65 48 45 46.65 45 45V12L33 0H12Z" fill="#E2E5E7"/>
 <path d="M36 12H45L33 0V9C33 10.65 34.35 12 36 12Z" fill="#B0B7BD"/>
 <path d="M45 21L36 12H45V21Z" fill="#CAD1D8"/>

@@ -34,34 +34,26 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
 h2 {
   margin: 0;
-  font-size: 1.5rem;
+  color: var(--first-color);
+  text-align: center;
+  font-size: 2.3rem;
+  font-weight: bold;
 }
 
 h3 {
-  margin: 0;
-  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+  text-align: center;
+  color: var(--first-color);
 }
 
-h4 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-h5 {
-  margin: 0;
-  font-size: 0.85rem;
-}
-
-h6 {
-  margin: 0;
-  font-size: 0.7rem;
+p {
+  font-size: 1.1rem;
+  color: var(--first-color);
+  margin: 0.5rem 0;
 }
 
 /* Utilities */
@@ -69,6 +61,8 @@ h6 {
 .box-shadow-1 {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
 }
+
+/* General */
 
 .btn {
   color: var(--white-color);
@@ -232,14 +226,14 @@ h6 {
 
 /* Inicio - Home */
 
+.div-image-title {
+  margin-top: 1rem;
+}
+
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.programmer-svg {
-  /* margin: 1rem 0; */
 }
 
 .p-nombre {
@@ -269,12 +263,53 @@ h6 {
 
 .titulo-principal {
   text-align: center;
+  margin-top: 0.5rem;
   margin-bottom: 1.5rem;
   font-weight: 900;
   color: var(--first-color);
   font-size: 3.5rem;
   letter-spacing: -0.11rem;
   line-height: 3rem;
+}
+
+/* Acerca - About */
+
+.about {
+  width: 100vw;
+}
+
+.about > .container {
+  margin: 2rem 1rem;
+}
+
+.div-skill {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.div-skill:hover {
+  transform: scale(1.2);
+}
+
+.div-skill img {
+  width: 3rem;
+}
+
+.div-skill p {
+  font-style: italic;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  cursor: default;
+}
+
+.skills-container {
+  width: 288px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 /* Media queries */
@@ -405,7 +440,4 @@ h6 {
     letter-spacing: -0.25rem;
     line-height: 5.2rem;
   }
-}
-
-@media screen and (min-width: 1080px) {
 }
