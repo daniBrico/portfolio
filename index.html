@@ -13,10 +13,10 @@
   </head>
   <body>
     <header class="header">
-      <section class="container">
+      <section class="container padding">
         <div class="lang-mode-container">
-          <div class="ligth-container-icon">
-            <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <div class="light-container-icon">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M4.99299 10C4.99299 12.761 7.23899 15.007 9.99999 15.007C12.761 15.007 15.007 12.761 15.007 10C15.007 7.239 12.761 4.993 9.99999 4.993C7.23899 4.993 4.99299 7.239 4.99299 10ZM9.99999 6.993C11.658 6.993 13.007 8.342 13.007 10C13.007 11.658 11.658 13.007 9.99999 13.007C8.34199 13.007 6.99299 11.658 6.99299 10C6.99299 8.342 8.34199 6.993 9.99999 6.993ZM8.99799 17H10.998V20H8.99799V17ZM8.99799 0H10.998V3H8.99799V0ZM-0.00201416 9H2.99799V11H-0.00201416V9ZM16.998 9H19.998V11H16.998V9ZM2.21899 16.363L4.33899 14.241L5.75399 15.655L3.63399 17.777L2.21899 16.363ZM14.24 4.344L16.362 2.222L17.776 3.636L15.654 5.758L14.24 4.344ZM4.34199 5.759L2.21999 3.637L3.63499 2.223L5.75499 4.345L4.34199 5.759ZM17.776 16.364L16.362 17.778L14.24 15.656L15.654 14.242L17.776 16.364Z"
               />
@@ -34,42 +34,39 @@
           </svg>
         </button>
         <nav class="menu">
-          <div class="container">
-            <a href="#inicio">Inicio</a>
-          </div>
-          <div class="container">
-            <a href="#acerca">Acerca</a>
-          </div>
-          <div class="container">
-            <a href="#proyectos">Proyectos</a>
-          </div>
-          <div class="container">
-            <a href="#contacto">Contacto</a>
-          </div>
+          <a href="#inicio">Inicio</a>
+
+          <a href="#acerca">Acerca</a>
+
+          <a href="#proyectos">Proyectos</a>
+
+          <a href="#contacto">Contacto</a>
         </nav>
       </section>
     </header>
     <section id="inicio" class="home">
-      <div class="div-image-title">
-        <img class="programmer-svg" src="assets/Programmer-unDraw.svg" alt="Persona programando" />
-        <h1 class="titulo-principal">
-          Bienvenidos <br />
-          a mi sitio <br />
-          web
-        </h1>
-      </div>
-      <p class="p-nombre">Mi nombre es <b>Daniel</b></p>
-      <p class="p-descripcion">Soy estudiante de <b>Lic. en Informática</b>, con un perfil orientado al <b>desarrollo frontend.</b></p>
-      <a href="#blank" class="btn box-shadow-1"
-        ><span class="span-cv">Obten mi CV</span> <br />
-        <span class="span-gd">Google Drive</span></a
-      >
+      <article class="padding">
+        <div class="div-image-title">
+          <img class="programmer-svg" src="assets/Programmer-unDraw.svg" alt="Persona programando" />
+          <h1 class="titulo-principal">
+            Bienvenidos <br />
+            a mi sitio <br />
+            web
+          </h1>
+        </div>
+        <p class="p-nombre">Mi nombre es <b>Daniel</b></p>
+        <p class="p-descripcion">Soy estudiante de <b>Lic. en Informática</b>, con un perfil orientado al <b>desarrollo frontend.</b></p>
+        <a href="https://drive.google.com/file/d/147PJoa1pqSZtqQ-EQQ3HmDu8ATnYvdO7/view?usp=sharing" class="btn box-shadow-1" rel="noopener" target="_blank"
+          ><span class="span-cv">Obten mi CV</span> <br />
+          <span class="span-gd">Google Drive</span></a
+        >
+      </article>
     </section>
     <section id="acerca" class="about">
-      <div class="container">
-        <h2>Acerca</h2>
-        <p>Motivado por mi entusiasmo de emprender nuevos desafios aprendí a trabajar con algunas herramientas y tecnologías para el desarrollo web.</p>
-        <h3>Habilidades</h3>
+      <article class="padding">
+        <h2 class="article-h2">Acerca</h2>
+        <p class="article-p">Motivado por mi entusiasmo de emprender nuevos desafios aprendí a trabajar con algunas herramientas y tecnologías para el desarrollo web.</p>
+        <h3 class="article-h3">Habilidades</h3>
         <div class="skills-container">
           <div class="div-skill">
             <img src="assets/html.svg" alt="Icono de HTML" />
@@ -84,41 +81,42 @@
             <p>JavaScript</p>
           </div>
           <div class="div-skill">
-            <img src="assets/github.svg" alt="Icono de HTML" />
-            <p>HTML</p>
+            <img src="assets/github.svg" alt="Icono de GitHub" />
+            <p>GitHub</p>
           </div>
           <div class="div-skill">
-            <img src="assets/sql.svg" alt="Icono de HTML" />
-            <p>HTML</p>
+            <img src="assets/sql.svg" alt="Icono de SQL" />
+            <p>SQL</p>
           </div>
           <div class="div-skill">
-            <img src="assets/java.svg" alt="Icono de HTML" />
-            <p>HTML</p>
+            <img src="assets/java.svg" alt="Icono de Java" />
+            <p>Java</p>
           </div>
           <div class="div-skill">
-            <img src="assets/figma.svg" alt="Icono de HTML" />
-            <p>HTML</p>
+            <img src="assets/figma.svg" alt="Icono de Figma" />
+            <p>Figma</p>
           </div>
           <div class="div-skill">
-            <img src="assets/Obsidian.svg" alt="Icono de HTML" />
-            <p>HTML</p>
+            <img src="assets/Obsidian.svg" alt="Icono de Obsidian" />
+            <p>Obsidian</p>
           </div>
         </div>
-      </div>
+      <article/>
     </section>
-    <section>
-      <home id="proyectos" class="projects">
-        <h2>Projects</h2>
-      </home>
+    <section id="proyectos" class="projects">
+      <article class="padding">
+        <h2 class="article-h2">Proyectos</h2>
+      </article>
     </section>
-    <section>
-      <home id="contacto" class="contact">
+    <!-- <section id="contacto" class="contact">
+      <article>
         <h2>Contact</h2>
-      </home>
+      <article/>
     </section>
     <footer>
       <h2>Footer</h2>
-    </footer>
+    </footer> -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <script src="script.js"></script>
   </body>
 </html>
