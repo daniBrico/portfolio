@@ -16,3 +16,29 @@
     $menu.classList.toggle("is-active");
   })
 })(document);
+
+((d) => {
+  const $form = d.querySelector(".contact-form");
+
+  // Faltan las validaiones 
+  $form.addEventListener("submit", e => {
+    e.preventDefault();
+    // Mostramos el loader (cuando lo coloquemos en el HTML)
+    fetch("https://formsubmit.co/ajax/daniel.jorge96@outlook.com", {
+      method: "POST",
+      body: new FormData(e.target)
+    })
+      .then(res => res.ok ? res.json() : Promise.reject(res))
+      .then(json => {
+        console.log(json);
+        // Ocultamos el loader (cuando lo coloquemos en el HTML)
+        // También activamos el mensaje que querramos mostrar
+        $form.reset();
+      })
+      .catch(err => {
+        console.log(err);
+        // Mostrar el error en la página web
+      });
+  });
+
+})(document);

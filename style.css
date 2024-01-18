@@ -253,7 +253,8 @@ p {
   align-items: center;
 }
 
-.home .btn {
+.home .btn,
+.contact .btn {
   display: block;
   width: 12rem;
   margin-top: 1rem;
@@ -300,6 +301,8 @@ p {
 }
 
 .about article {
+  max-width: var(--max-width);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -307,7 +310,6 @@ p {
 
 .article-p {
   text-align: center;
-  max-width: 620px;
   margin: 0 auto;
 }
 
@@ -345,26 +347,43 @@ p {
 
 /* Proyectos - Projects */
 
-.div-iconos-project {
+.div-icons-project {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.div-iconos-project img {
+.div-icons-project div {
+  display: flex;
+}
+
+.div-icons-project svg {
   transition: transform 0.3s ease;
 }
 
-.img-folder-icon {
+.div-icons-project svg {
   width: 1.9rem;
 }
 
-.img-github-icon {
-  width: 1.7rem;
+.div-icons-project svg:hover,
+.div-socialMedia svg:hover {
+  transform: scale(1.1);
 }
 
-.div-iconos-project img:hover {
-  transform: scale(1.1);
+.div-icons-project svg:hover .path-folder,
+.div-icons-project svg:hover .path-github,
+.div-icons-project svg:hover .path-link,
+.div-socialMedia svg:hover .path-github,
+.div-socialMedia svg:hover .path-linkedIn {
+  fill: rgb(50, 50, 71, 0.8);
+}
+
+.path-folder,
+.path-github,
+.path-link,
+.path-linkedIn {
+  fill: var(--fourth-color);
+  transition: fill 0.4s ease;
 }
 
 .projects {
@@ -373,7 +392,7 @@ p {
 
 .projects article {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 1rem auto;
   display: grid;
   justify-content: center;
 }
@@ -384,11 +403,15 @@ p {
   padding: 1rem 0.5rem;
   margin-top: 1.5rem;
   max-width: 450px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project:hover {
   transform: scale(1.03);
+  /* background-color: rgb(68, 69, 100, 0.1); */
+  box-shadow: 0.25rem 0.25rem 1rem rgba(27, 177, 191, 0.5);
+  /* color: rgb(27, 177, 191); */
 }
 
 .project h3 {
@@ -399,11 +422,111 @@ p {
 
 .project p {
   margin-top: 1rem;
+  color: rgb(115, 115, 115, 0.8);
 }
 
 .project p,
 .project h3 {
   user-select: none;
+}
+
+/* Contacto - Contact */
+
+.contact {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.contact article {
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+.contact-form {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 800px;
+  border-radius: 0.5rem;
+}
+
+.contact-form > * {
+  padding: 0.5rem;
+  margin: 0.5rem auto;
+  display: block;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 0.85rem;
+  font-family: var(--font);
+  transition: border-bottom 0.3s ease-in, border 0.3s ease-in;
+}
+
+.contact-form textarea:focus {
+  outline: none;
+  border: thin solid rgba(0, 0, 0, 0.4);
+}
+
+.contact-form input:focus {
+  outline: none;
+  border-bottom: thin solid rgba(0, 0, 0, 0.4);
+}
+
+.contact-form input {
+  border: 0;
+  border-bottom: thin solid rgba(0, 0, 0, 0.2);
+}
+
+.contact-form textarea {
+  border: thin solid rgba(0, 0, 0, 0.2);
+  resize: none;
+  border-radius: 0.2rem;
+}
+
+.contact-form input[type="submit"] {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  width: 9rem;
+  font-size: 0.9rem;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form *::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.contact .btn {
+  margin: 1rem auto;
+}
+
+.div-socialMedia {
+  margin-top: 2.5rem;
+}
+
+.div-socialMedia svg {
+  width: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.div-socialMedia svg:first-child {
+  margin-right: 0.5rem;
+}
+
+/* Pie de página - Footer */
+
+.footer {
+  background-color: var(--fourth-color);
+}
+
+.footer section {
+  padding: 0.5rem 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  color: var(--white-color);
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Media queries */
@@ -418,7 +541,7 @@ p {
 
   /* Acerca - About */
 
-  .article-h2 {
+  h2 {
     font-size: 6.3vw;
   }
 
@@ -444,6 +567,31 @@ p {
     grid-template-columns: repeat(2, 48%);
     justify-content: space-between;
   }
+
+  /* Contacto - Contact */
+
+  .contact .article-p {
+    margin-right: 0;
+  }
+
+  .contact .btn {
+    margin-left: 2rem;
+  }
+
+  .contact .div-moreInfo {
+    display: flex;
+    align-items: center;
+  }
+
+  .div-socialMedia svg {
+    width: 2.5rem;
+  }
+
+  /* Pie de página - Footer */
+
+  .footer small {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -457,7 +605,8 @@ p {
     width: 42vw;
   }
 
-  .home .btn {
+  .home .btn,
+  .contact .btn {
     width: 14rem;
     padding: 0.7rem 0;
   }
@@ -502,13 +651,12 @@ p {
     margin-top: 4rem;
   }
 
-  .article-h2 {
+  h2 {
     font-size: 6vw;
   }
 
   .article-p {
     font-size: 2.6vw;
-    max-width: 800px;
   }
 
   .article-h3 {
@@ -544,6 +692,21 @@ p {
   .project p {
     font-size: 1.2rem;
   }
+
+  /* Contacto - Contact */
+
+  .contact {
+    margin-bottom: 1rem;
+  }
+
+  .contact-form input[type="submit"] {
+    width: 12rem;
+    font-size: 1.3rem;
+  }
+
+  .div-socialMedia svg {
+    width: 2.8rem;
+  }
 }
 
 @media screen and (min-width: 930px) {
@@ -576,7 +739,7 @@ p {
 
   /* Acerca - About */
 
-  .article-h2 {
+  h2 {
     font-size: 5.8vw;
   }
 
@@ -604,7 +767,8 @@ p {
 @media screen and (min-width: 1024px) {
   /* Inicio - Home */
 
-  .home .btn {
+  .home .btn,
+  .contact .btn {
     width: 15rem;
     padding: 0.7rem 0;
   }
@@ -687,8 +851,8 @@ p {
 
   /* Acerca - About */
 
-  .article-h2 {
-    font-size: 4.8vw;
+  h2 {
+    font-size: 4.4vw;
   }
 
   .article-p {
@@ -715,6 +879,34 @@ p {
 
   .project {
     max-width: auto;
+  }
+
+  /* Contacto - Contact */
+
+  .contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 1rem;
+  }
+
+  .contact-form textarea {
+    grid-column: span 2;
+  }
+
+  .contact-form input[type="submit"] {
+    width: 15rem;
+    font-size: 1.7rem;
+  }
+
+  /* Pie de página - Footer */
+
+  .footer small {
+    font-size: 1.2rem;
   }
 }
 
