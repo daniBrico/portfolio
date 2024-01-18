@@ -4,18 +4,44 @@
 
 ((d) => {
   const $btnMenu = d.querySelector(".menu-button"),
-    $menu = d.querySelector(".menu");
-
-  $btnMenu.addEventListener("click", e => {
-    $menu.classList.toggle("is-active");
-  });
+    $menu = d.querySelector(".menu"),
+    $scrollBtn = d.querySelector(".scroll-top-btn");
 
   d.addEventListener("click", e => {
-    if (!e.target.matches(".menu a")) return false;
+    if ($btnMenu.contains(e.target)) {
+      $menu.classList.toggle("is-active");
+      return false;
+    }
 
-    $menu.classList.toggle("is-active");
+    if ($menu.classList.contains("is-active")) {
+      if (e.target.classList.contains("menu")) {
+        return false;
+      }
+      $menu.classList.toggle("is-active");
+    }
+
+    if (e.target.matches(".scroll-top-btn")) {
+      window.scrollTo({
+        behavior: "smooth",
+        top: 0
+      });
+    }
   })
+
+
+  window.addEventListener("scroll", e => {
+    let scrollTop = d.documentElement.scrollTop;
+
+    if (scrollTop > 600) {
+      $scrollBtn.classList.remove("hidden");
+    } else {
+      $scrollBtn.classList.add("hidden");
+    }
+  });
+
 })(document);
+
+// Funcionamiento del formulario de contacto
 
 ((d) => {
   const $form = d.querySelector(".contact-form");
