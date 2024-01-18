@@ -56,6 +56,10 @@ p {
   margin: 0;
 }
 
+section {
+  scroll-margin-top: 4rem;
+}
+
 /* Utilities */
 
 .box-shadow-1 {
@@ -638,6 +642,10 @@ p {
 }
 
 @media screen and (min-width: 768px) {
+  section {
+    scroll-margin-top: 6rem;
+  }
+
   /* Inicio - Home */
 
   .div-image-title {
@@ -739,6 +747,7 @@ p {
   /* Contacto - Contact */
 
   .contact {
+    margin-top: 4rem;
     margin-bottom: 1rem;
   }
 
