@@ -44,12 +44,15 @@
 // Funcionamiento del formulario de contacto
 
 ((d) => {
-  const $form = d.querySelector(".contact-form");
+  const $form = d.querySelector(".contact-form"),
+    $loader = d.querySelector(".dots-container");
 
   // Faltan las validaiones 
   $form.addEventListener("submit", e => {
     e.preventDefault();
-    // Mostramos el loader (cuando lo coloquemos en el HTML)
+
+    $loader.classList.remove("none");
+
     fetch("https://formsubmit.co/ajax/daniel.jorge96@outlook.com", {
       method: "POST",
       body: new FormData(e.target)
@@ -57,7 +60,7 @@
       .then(res => res.ok ? res.json() : Promise.reject(res))
       .then(json => {
         console.log(json);
-        // Ocultamos el loader (cuando lo coloquemos en el HTML)
+        $loader.classList.add("none");
         // También activamos el mensaje que querramos mostrar
         $form.reset();
       })
