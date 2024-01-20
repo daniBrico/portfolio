@@ -5,7 +5,9 @@
 ((d) => {
   const $btnMenu = d.querySelector(".menu-button"),
     $menu = d.querySelector(".menu"),
-    $scrollBtn = d.querySelector(".scroll-top-btn");
+    $scrollBtn = d.querySelector(".scroll-top-btn"),
+    $svgLunaIcon = d.getElementById("svg-luna-icon"),
+    $svgSolIcon = d.getElementById("svg-sol-icon");
 
   d.addEventListener("click", e => {
     if ($btnMenu.contains(e.target)) {
@@ -25,6 +27,17 @@
         behavior: "smooth",
         top: 0
       });
+    }
+
+    if (e.target.matches(".light-container-icon") || e.target.closest(".light-container-icon")) {
+      d.body.classList.toggle("dark");
+      if (d.body.classList.contains("dark")) {
+        $svgLunaIcon.classList.add("none");
+        $svgSolIcon.classList.remove("none");
+      } else {
+        $svgLunaIcon.classList.remove("none");
+        $svgSolIcon.classList.add("none");
+      }
     }
   })
 

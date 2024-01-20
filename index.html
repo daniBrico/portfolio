@@ -14,10 +14,13 @@
   <body>
     <div id="particles-js"></div>
     <header class="header box-shadow-1">
-      <section class="container">
+      <section>
         <div class="lang-mode-container">
           <div class="light-container-icon">
-            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <svg id="svg-luna-icon" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.333 13.076C11.6554 11.3977 10.5128 9.25979 10.0498 6.9324C9.58683 4.605 9.8241 2.19259 10.7317 0C8.14402 0.509401 5.76713 1.77909 3.905 3.64667C-1.30167 8.85333 -1.30167 17.296 3.905 22.5027C9.113 27.7107 17.5543 27.7093 22.7623 22.5027C24.6294 20.6407 25.899 18.2644 26.409 15.6773C24.2164 16.5847 21.804 16.8219 19.4767 16.3589C17.1493 15.8959 15.0114 14.7535 13.333 13.076Z"/>
+            </svg>              
+            <svg id="svg-sol-icon" class="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M4.99299 10C4.99299 12.761 7.23899 15.007 9.99999 15.007C12.761 15.007 15.007 12.761 15.007 10C15.007 7.239 12.761 4.993 9.99999 4.993C7.23899 4.993 4.99299 7.239 4.99299 10ZM9.99999 6.993C11.658 6.993 13.007 8.342 13.007 10C13.007 11.658 11.658 13.007 9.99999 13.007C8.34199 13.007 6.99299 11.658 6.99299 10C6.99299 8.342 8.34199 6.993 9.99999 6.993ZM8.99799 17H10.998V20H8.99799V17ZM8.99799 0H10.998V3H8.99799V0ZM-0.00201416 9H2.99799V11H-0.00201416V9ZM16.998 9H19.998V11H16.998V9ZM2.21899 16.363L4.33899 14.241L5.75399 15.655L3.63399 17.777L2.21899 16.363ZM14.24 4.344L16.362 2.222L17.776 3.636L15.654 5.758L14.24 4.344ZM4.34199 5.759L2.21999 3.637L3.63499 2.223L5.75499 4.345L4.34199 5.759ZM17.776 16.364L16.362 17.778L14.24 15.656L15.654 14.242L17.776 16.364Z"
               />
@@ -28,7 +31,7 @@
           </div>
         </div>
         <button class="menu-button">
-          <svg viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M0.333344 0H21.6667V2.66667H0.333344V0ZM0.333344 6.66667H21.6667V9.33333H0.333344V6.66667ZM0.333344 13.3333H21.6667V16H0.333344V13.3333Z"
             />
@@ -241,7 +244,7 @@
           <input type="email" name="email" placeholder="Ingresa tu correo *" title="Email incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
           <textarea name="comments" cols="30" rows="10" placeholder="Déjame tu mensaje *" required></textarea>
           <div class="div-input-loader">
-            <input class="btn" type="submit" value="Enviar mensaje">
+            <input class="btn box-shadow-1" type="submit" value="Enviar mensaje">
             <div class="dots-container none">
               <span style="--i:1;"></span>
               <span style="--i:2;"></span>

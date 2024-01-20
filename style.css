@@ -4,10 +4,11 @@
   --first-color: #323247;
   --second-color: #444564;
   --fourth-color: #7c85b5;
-  --white-color: #fff;
+  --white-color: #ffffff;
   --font: "Roboto Condensed", "sans-serif";
   --max-width: 1088px;
   --header-height: 4rem;
+  --box-shadow-aqua: 0.25rem 0.25rem 1rem rgba(27, 177, 191, 0.5);
 }
 
 /* Reset */
@@ -32,6 +33,11 @@ a {
 body {
   margin: 0;
   overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--second-color);
 }
 
 h2 {
@@ -40,6 +46,11 @@ h2 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
+}
+
+body.dark h2,
+body.dark h3 {
+  color: var(--white-color);
 }
 
 h3 {
@@ -54,6 +65,10 @@ p {
   font-size: 1.1rem;
   color: var(--first-color);
   margin: 0;
+}
+
+body.dark p {
+  color: var(--white-color);
 }
 
 section {
@@ -74,12 +89,7 @@ section {
   width: 100%;
   height: 100vh;
   position: fixed;
-  z-index: -1;
-}
-
-.position-zindex {
-  position: relative;
-  z-index: 100;
+  z-index: -10;
 }
 
 .section {
@@ -140,19 +150,19 @@ section {
   background-color: var(--second-color);
 }
 
-.padding {
-  padding: 1rem;
+body.dark .btn:hover {
+  background-color: #595a83;
 }
 
-.container {
-  margin: 0 auto;
+.padding {
+  padding: 1rem;
 }
 
 /* Menu */
 
 .menu-button {
   border: 0;
-  background-color: var(--fourth-color);
+  background-color: inherit;
   cursor: pointer;
   display: flex;
 }
@@ -167,6 +177,10 @@ section {
   flex-direction: column;
   align-items: center;
   transition: right 0.5s ease;
+}
+
+body.dark .menu {
+  background-color: var(--first-color);
 }
 
 .is-active {
@@ -217,6 +231,10 @@ section {
   justify-content: space-between;
 }
 
+body.dark .header {
+  background-color: var(--first-color);
+}
+
 .header section {
   width: 100%;
   margin: 0 1rem;
@@ -243,10 +261,14 @@ section {
   transform: scale(1.15);
 }
 
-.light-container-icon > svg {
+.light-container-icon svg {
   fill: var(--fourth-color);
   width: 1rem;
   height: 1rem;
+}
+
+body.dark .light-container-icon svg {
+  fill: var(--first-color);
 }
 
 @keyframes rotarInfinito {
@@ -258,7 +280,7 @@ section {
   }
 }
 
-.light-container-icon > svg:hover {
+.light-container-icon svg:hover {
   animation: rotarInfinito 1.5s linear infinite;
 }
 
@@ -286,6 +308,10 @@ section {
   color: var(--fourth-color);
   font-weight: 900;
   font-size: 1.1rem;
+}
+
+body.dark .language-container span {
+  color: var(--first-color);
 }
 
 /* Inicio - Home */
@@ -325,12 +351,20 @@ section {
   color: var(--first-color);
 }
 
+body.dark .p-nombre {
+  color: var(--white-color);
+}
+
 .p-descripcion {
   line-height: 1.8rem;
   font-size: 1.5rem;
   text-align: center;
   color: var(--first-color);
   max-width: 510px;
+}
+
+body.dark .p-descripcion {
+  color: var(--white-color);
 }
 
 .span-cv {
@@ -351,6 +385,10 @@ section {
   font-size: 3.5rem;
   letter-spacing: -0.11rem;
   line-height: 3rem;
+}
+
+body.dark .titulo-principal {
+  color: var(--white-color);
 }
 
 /* Acerca - About */
@@ -389,7 +427,6 @@ section {
 }
 
 .div-skill p {
-  /* font-style: italic; */
   font-size: 0.9rem;
   cursor: default;
   user-select: none;
@@ -431,10 +468,19 @@ section {
 
 .div-icons-project svg:hover .path-folder,
 .div-icons-project svg:hover .path-github,
-.div-icons-project svg:hover .path-link,
-.div-socialMedia svg:hover .path-github,
-.div-socialMedia svg:hover .path-linkedIn {
-  fill: rgb(50, 50, 71, 0.8);
+.div-icons-project svg:hover .path-link {
+  fill: var(--first-color);
+}
+
+body.dark .path-folder,
+body.dark .path-github,
+body.dark .path-link,
+body.dark .path-github {
+  fill: var(--white-color);
+}
+
+body.dark .project .path-github + path {
+  fill: var(--fourth-color);
 }
 
 .path-folder,
@@ -463,15 +509,17 @@ section {
   margin-top: 1.5rem;
   max-width: 450px;
   background-color: var(--white-color);
-  transition: transform 0.3s ease, background-color 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body.dark .project {
+  background-color: var(--fourth-color);
+  border: none;
 }
 
 .project:hover {
   transform: scale(1.03);
-  /* background-color: rgb(68, 69, 100, 0.1); */
-  box-shadow: 0.25rem 0.25rem 1rem rgba(27, 177, 191, 0.5);
-  /* color: rgb(27, 177, 191); */
+  box-shadow: var(--box-shadow-aqua);
 }
 
 .project h3 {
@@ -511,9 +559,6 @@ section {
 }
 
 .contact-form > * {
-  /* padding: 0.5rem;
-  margin: 0.5rem auto; */
-  /* display: block; */
   width: 100%;
 }
 
@@ -545,6 +590,27 @@ section {
   border: thin solid rgba(0, 0, 0, 0.2);
   resize: none;
   border-radius: 0.2rem;
+  transition: background-color 0.4s ease-in;
+}
+
+/* el cursor es default en vez de text (como debería ser) porque google chrome y edge, en el efecto hover, ponen transparente el cursor y no se ve. No pude solucionarlo a menos que quite las partículas */
+.contact-form textarea:hover,
+.contact-form input[type="text"]:hover,
+.contact-form input[type="email"]:hover {
+  /* background-color: rgba(124, 133, 181, 0.3); */
+  cursor: default;
+}
+
+.contact-form textarea,
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  color: var(--first-color);
+}
+
+@-moz-document url-prefix () {
+  .contact-form textarea:hover {
+    cursor: text;
+  }
 }
 
 .contact-form input[type="submit"] {
@@ -566,6 +632,7 @@ section {
 
 .div-socialMedia {
   margin-top: 2.5rem;
+  display: flex;
 }
 
 .div-socialMedia svg {
@@ -577,10 +644,19 @@ section {
   margin-right: 0.5rem;
 }
 
+body.dark .div-socialMedia .path-github {
+  fill: var(--fourth-color);
+}
+
 /* Pie de página - Footer */
 
 .footer {
   background-color: var(--fourth-color);
+  transition: all 0.3s ease;
+}
+
+body.dark .footer {
+  background-color: var(--first-color);
 }
 
 .footer section {
@@ -620,7 +696,11 @@ section {
 .scroll-top-btn:hover {
   background-color: var(--second-color);
   transform: scale(1.2);
-  box-shadow: 0.25rem 0.25rem 1rem rgba(27, 177, 191, 0.5);
+  box-shadow: var(--box-shadow-aqua);
+}
+
+body.dark .scroll-top-btn {
+  background-color: var(--fourth-color);
 }
 
 /* Media queries */
@@ -825,7 +905,7 @@ section {
     margin-left: 2.5rem;
   }
 
-  /* Scroll boton */
+  /* Scroll button */
 
   .scroll-top-btn {
     bottom: 3.2rem;
