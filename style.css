@@ -122,6 +122,17 @@ section {
   animation: wave 3s ease-in-out infinite;
 }
 
+body.dark .wave {
+  color: var(--white-color);
+}
+
+body.dark .border {
+  color: var(--first-color);
+  text-shadow: -0.5px -0.5px 0 var(--white-color),
+    0.5px -0.5px 0 var(--white-color), 0.5px 0.5px 0 var(--white-color),
+    -0.5px 0.5px 0 var(--white-color);
+}
+
 @keyframes wave {
   0%,
   100% {
@@ -500,44 +511,11 @@ body.dark .titulo-principal {
 
 /* Proyectos - Projects */
 
-.div-icons-project {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.div-icons-project div {
-  display: flex;
-}
-
-.div-icons-project svg {
-  transition: transform 0.3s ease;
-}
-
-.div-icons-project svg {
-  width: 1.9rem;
-}
-
-.div-icons-project svg:hover,
-.div-socialMedia svg:hover {
-  transform: scale(1.1);
-}
-
-.div-icons-project svg:hover .path-folder,
-.div-icons-project svg:hover .path-github,
-.div-icons-project svg:hover .path-link {
-  fill: var(--first-color);
-}
-
 body.dark .path-folder,
 body.dark .path-github,
 body.dark .path-link,
 body.dark .path-github {
   fill: var(--white-color);
-}
-
-body.dark .project .path-github + path {
-  fill: var(--fourth-color);
 }
 
 .path-folder,
@@ -552,47 +530,20 @@ body.dark .project .path-github + path {
   margin-top: 3rem;
 }
 
-.projects article {
-  max-width: var(--max-width);
-  margin: 1rem auto;
-  display: grid;
-  justify-content: center;
-}
-
-.project {
-  border: 0.2px solid #e5e5e5;
-  border-radius: 0.5rem;
-  padding: 1rem 0.5rem;
-  margin-top: 1.5rem;
-  max-width: 450px;
-  background-color: var(--white-color);
-  transition: all 0.3s ease;
-}
-
-body.dark .project {
-  background-color: var(--fourth-color);
-  border: none;
-}
-
-.project:hover {
-  transform: scale(1.03);
-  box-shadow: var(--box-shadow-aqua);
-}
-
-.project h3 {
+.projects div {
   margin-top: 0.5rem;
-  text-align: left;
-  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.project p {
-  margin-top: 1rem;
-  color: rgb(115, 115, 115, 0.8);
+.projects div p {
+  margin-bottom: 1rem;
 }
 
-.project p,
-.project h3 {
-  user-select: none;
+.projects svg {
+  width: 16rem;
+  margin: 0 auto;
 }
 
 /* Contacto - Contact */
@@ -648,6 +599,10 @@ body.dark .project {
   resize: none;
   border-radius: 0.2rem;
   transition: background-color 0.4s ease-in;
+}
+
+.div-socialMedia svg:hover {
+  transform: scale(1.1);
 }
 
 /* el cursor es default en vez de text (como debería ser) porque google chrome y edge, en el efecto hover, ponen transparente el cursor y no se ve. No pude solucionarlo a menos que quite las partículas */
@@ -794,9 +749,12 @@ body.dark .scroll-top-btn {
 
   /* Proyectos - Projects */
 
-  .projects article {
-    grid-template-columns: repeat(2, 48%);
-    justify-content: space-between;
+  .projects div p {
+    margin-top: 0.5rem;
+  }
+
+  .projects svg {
+    width: 22rem;
   }
 
   /* Contacto - Contact */
@@ -924,16 +882,8 @@ body.dark .scroll-top-btn {
 
   /* Proyectos - Projects */
 
-  .project {
-    max-width: 440px;
-  }
-
-  .project h3 {
-    font-size: 1.6rem;
-  }
-
-  .project p {
-    font-size: 1.2rem;
+  .projects svg {
+    width: 27rem;
   }
 
   /* Contacto - Contact */
@@ -1017,10 +967,6 @@ body.dark .scroll-top-btn {
 
   .div-skill p {
     font-size: 21px;
-  }
-
-  .projects article {
-    justify-content: space-around;
   }
 }
 
@@ -1135,14 +1081,12 @@ body.dark .scroll-top-btn {
 
   /* Proyectos - Projects */
 
-  .projects article {
-    width: 100%;
-    grid-template-columns: repeat(3, 32%);
-    justify-content: space-between;
+  .projects svg {
+    width: 35rem;
   }
 
-  .project {
-    max-width: auto;
+  .projects div p {
+    margin-top: 1.5rem;
   }
 
   /* Contacto - Contact */
@@ -1203,13 +1147,6 @@ body.dark .scroll-top-btn {
 
   .article-p {
     font-size: 25px;
-  }
-
-  /* Proyectos - Projects */
-
-  .projects article {
-    width: 100%;
-    grid-template-columns: repeat(3, 32%);
   }
 
   /* Scroll Button */
