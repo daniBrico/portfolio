@@ -5,6 +5,7 @@
   --second-color: #444564;
   --fourth-color: #7c85b5;
   --white-color: #ffffff;
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
   --font: "Roboto Condensed", "sans-serif";
   --max-width: 1088px;
   --header-height: 4rem;
@@ -54,8 +55,6 @@ body.dark h3 {
 }
 
 h3 {
-  margin-top: 1.5rem;
-  margin-bottom: 0;
   font-size: 1.6rem;
   text-align: center;
   color: var(--first-color);
@@ -598,7 +597,6 @@ body.dark .path-github {
   border: thin solid rgba(0, 0, 0, 0.2);
   resize: none;
   border-radius: 0.2rem;
-  transition: background-color 0.4s ease-in;
 }
 
 .div-socialMedia svg:hover {
@@ -617,12 +615,6 @@ body.dark .path-github {
 .contact-form input[type="text"],
 .contact-form input[type="email"] {
   color: var(--first-color);
-}
-
-@-moz-document url-prefix () {
-  .contact-form textarea:hover {
-    cursor: text;
-  }
 }
 
 .contact-form input[type="submit"] {
@@ -658,6 +650,37 @@ body.dark .path-github {
 
 body.dark .div-socialMedia .path-github {
   fill: var(--fourth-color);
+}
+
+/* Ventana modal de agradecimiento */
+
+.modal-content {
+  padding: 2rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  background-color: var(--white-color);
+}
+
+.modal-content h3 {
+  margin: 0;
+}
+
+body.dark .modal-content h3 {
+  color: var(--first-color);
+}
+
+.ventana-modal {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black-alpha-color);
+  transition: all 0.5s ease-in-out;
 }
 
 /* Pie de página - Footer */
@@ -789,6 +812,12 @@ body.dark .scroll-top-btn {
     height: 3.2rem;
     font-size: 1.7rem;
   }
+
+  /* Ventana modal */
+
+  .modal-content h3 {
+    font-size: 4vw;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -850,6 +879,10 @@ body.dark .scroll-top-btn {
 
   .about {
     margin-top: 4rem;
+  }
+
+  .article-h3 {
+    margin-top: 2rem;
   }
 
   h2 {
@@ -917,6 +950,12 @@ body.dark .scroll-top-btn {
   .scroll-top-btn {
     bottom: 3.2rem;
   }
+
+  /* Ventana modal */
+
+  .modal-content h3 {
+    font-size: 3.9vw;
+  }
 }
 
 @media screen and (min-width: 930px) {
@@ -967,6 +1006,12 @@ body.dark .scroll-top-btn {
 
   .div-skill p {
     font-size: 21px;
+  }
+
+  /* Ventana modal */
+
+  .modal-content h3 {
+    font-size: 3.7vw;
   }
 }
 
@@ -1127,6 +1172,12 @@ body.dark .scroll-top-btn {
 
   .scroll-top-btn {
     right: 2rem;
+  }
+
+  /* Ventana modal */
+
+  .modal-content h3 {
+    font-size: 3.2vw;
   }
 }
 

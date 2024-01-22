@@ -58,9 +58,10 @@
 
 ((d) => {
   const $form = d.querySelector(".contact-form"),
-    $loader = d.querySelector(".dots-container");
+    $loader = d.querySelector(".dots-container"),
+    $ventanaModal = d.querySelector(".ventana-modal");
 
-  // Faltan las validaiones 
+  // Faltan las validaciones 
   $form.addEventListener("submit", e => {
     e.preventDefault();
 
@@ -73,13 +74,19 @@
       .then(res => res.ok ? res.json() : Promise.reject(res))
       .then(json => {
         console.log(json);
-        $loader.classList.add("none");
-        // También activamos el mensaje que querramos mostrar
+        $ventanaModal.classList.remove("hidden");
         $form.reset();
       })
       .catch(err => {
         console.log(err);
-        // Mostrar el error en la página web
+        let message = err.statusText || "Ocurrio un error al enviar el mensaje, intenta nuevamente";
+
+        $ventanaModal.querySelector("h3").innerHTML = `Error ${error.statusText}:${message}`;
+      }).finally(() => {
+        $loader.classList.add("none");
+        setTimeout(() => {
+          $ventanaModal.classList.add("hidden")
+        }, 3000);
       });
   });
 
