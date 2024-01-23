@@ -10,6 +10,12 @@
   --max-width: 1088px;
   --header-height: 4rem;
   --box-shadow-aqua: 0.25rem 0.25rem 1rem rgba(27, 177, 191, 0.5);
+  --gradient-1-start: #007cf0;
+  --gradient-1-end: #00dfd8;
+  --gradient-2-start: #7928ca;
+  --gradient-2-end: #ff0080;
+  --gradient-3-start: #ff4d4d;
+  --gradient-3-end: #f9cb28;
 }
 
 /* Reset */
@@ -443,15 +449,193 @@ body.dark .p-descripcion {
   font-size: 0.9rem;
 }
 
+/* Animación de bienvenidos a mi sitio web */
+
 .titulo-principal {
   text-align: center;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
   font-weight: 900;
-  color: var(--first-color);
-  font-size: 3.5rem;
+  font-size: 3.7rem;
   letter-spacing: -0.11rem;
   line-height: 3rem;
+  user-select: none;
+  border: 0 solid;
+  color: var(--white-color);
+}
+
+.relative {
+  position: relative;
+}
+
+.block {
+  display: block;
+}
+
+.span-interno-1,
+.span-interno-2,
+.span-interno-3 {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  border: 0 solid;
+  animation-timing-function: ease-in;
+}
+
+.span-interno-1 {
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-1-start),
+    var(--gradient-1-end)
+  );
+  animation-name: span-interno-gradient-1;
+}
+
+@keyframes span-interno-gradient-1 {
+  from,
+  16.667%,
+  to {
+    opacity: 1;
+  }
+  33.333%,
+  83.333% {
+    opacity: 0;
+  }
+}
+
+.span-interno-2 {
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-2-start),
+    var(--gradient-2-end)
+  );
+  animation-name: span-interno-gradient-2;
+}
+
+@keyframes span-interno-gradient-2 {
+  from,
+  to {
+    opacity: 0;
+  }
+  33.333%,
+  50% {
+    opacity: 1;
+  }
+  16.667%,
+  66.667% {
+    opacity: 0;
+  }
+}
+
+.span-interno-3 {
+  background-image: linear-gradient(
+    90deg,
+    var(--gradient-3-start),
+    var(--gradient-3-end)
+  );
+  animation-name: span-interno-gradient-3;
+}
+
+@keyframes span-interno-gradient-3 {
+  from,
+  50%,
+  to {
+    opacity: 0;
+  }
+  66.667%,
+  83.333% {
+    opacity: 1;
+  }
+}
+
+.span-externo-1,
+.span-externo-2,
+.span-externo-3 {
+  border: 0 solid;
+  color: var(--first-color);
+}
+
+.span-externo-1::before,
+.span-externo-2::before,
+.span-externo-3::before {
+  width: 100%;
+  z-index: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  border: 0 solid;
+  color: rgba(0, 0, 0, 0.5);
+  /* Duración y conteo de animación */
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+body.dark .span-externo-1::before,
+body.dark .span-externo-2::before,
+body.dark .span-externo-3::before {
+  color: var(--white-color);
+}
+
+.span-externo-1::before {
+  content: "Bienvenidos";
+  animation-name: span-externo-gradient-1;
+}
+
+@keyframes span-externo-gradient-1 {
+  from,
+  16.667%,
+  to {
+    opacity: 0;
+  }
+  25%,
+  91.667% {
+    opacity: 1;
+  }
+}
+
+.span-externo-2::before {
+  content: "a mi sitio";
+  animation-name: span-externo-gradient-2;
+}
+
+@keyframes span-externo-gradient-2 {
+  from,
+  to {
+    opacity: 1;
+  }
+  33.333%,
+  50% {
+    opacity: 0;
+  }
+  25%,
+  58.333% {
+    opacity: 1;
+  }
+}
+
+.span-externo-3::before {
+  content: "web";
+  animation-name: span-externo-gradient-3;
+}
+
+@keyframes span-externo-gradient-3 {
+  from,
+  58.333%,
+  91.667%,
+  to {
+    opacity: 1;
+  }
+  66.667%,
+  83.333% {
+    opacity: 0;
+  }
 }
 
 body.dark .titulo-principal {
@@ -748,6 +932,12 @@ body.dark .scroll-top-btn {
     margin-right: 4rem;
   }
 
+  .titulo-principal {
+    font-size: 10vw;
+    letter-spacing: -0.25vw;
+    line-height: 8vw;
+  }
+
   /* Acerca - About */
 
   h2 {
@@ -777,7 +967,7 @@ body.dark .scroll-top-btn {
   }
 
   .projects svg {
-    width: 22rem;
+    width: 25rem;
   }
 
   /* Contacto - Contact */
@@ -865,9 +1055,10 @@ body.dark .scroll-top-btn {
   }
 
   .titulo-principal {
-    font-size: 9.2vw;
+    margin: 0;
+    font-size: 10vw;
     letter-spacing: -0.25vw;
-    line-height: 7.2vw;
+    line-height: 8vw;
   }
 
   .span-cv {
@@ -970,9 +1161,9 @@ body.dark .scroll-top-btn {
   }
 
   .titulo-principal {
-    font-size: 8vw;
+    font-size: 10vw;
     letter-spacing: -0.25vw;
-    line-height: 6.8vw;
+    line-height: 8vw;
   }
 
   .p-nombre {
@@ -1099,9 +1290,9 @@ body.dark .scroll-top-btn {
   }
 
   .titulo-principal {
-    font-size: 6.7vw;
+    font-size: 9vw;
     letter-spacing: -0.1vw;
-    line-height: 5.3vw;
+    line-height: 7.2vw;
   }
 
   /* Acerca - About */
@@ -1189,6 +1380,12 @@ body.dark .scroll-top-btn {
   }
 
   /* Inicio - Home */
+
+  .titulo-principal {
+    font-size: 110px;
+    letter-spacing: -3px;
+    line-height: 5.8rem;
+  }
 
   .p-nombre {
     font-size: 1.8vw;
