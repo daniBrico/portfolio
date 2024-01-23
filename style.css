@@ -12,10 +12,10 @@
   --box-shadow-aqua: 0.25rem 0.25rem 1rem rgba(27, 177, 191, 0.5);
   --gradient-1-start: #007cf0;
   --gradient-1-end: #00dfd8;
-  --gradient-2-start: #7928ca;
-  --gradient-2-end: #ff0080;
-  --gradient-3-start: #ff4d4d;
-  --gradient-3-end: #f9cb28;
+  --gradient-2-start: #d1ca40;
+  --gradient-2-end: #00d95d;
+  --gradient-3-start: #22c1c3;
+  --gradient-3-end: #fdbb2d;
 }
 
 /* Reset */
@@ -461,7 +461,7 @@ body.dark .p-descripcion {
   line-height: 3rem;
   user-select: none;
   border: 0 solid;
-  color: var(--white-color);
+  color: var(--first-color);
 }
 
 .relative {
@@ -482,7 +482,7 @@ body.dark .p-descripcion {
   animation-duration: 8s;
   animation-iteration-count: infinite;
   border: 0 solid;
-  animation-timing-function: ease-in;
+  animation-timing-function: ease-out;
 }
 
 .span-interno-1 {
@@ -512,6 +512,7 @@ body.dark .p-descripcion {
     var(--gradient-2-start),
     var(--gradient-2-end)
   );
+
   animation-name: span-interno-gradient-2;
 }
 
@@ -558,6 +559,12 @@ body.dark .p-descripcion {
   color: var(--first-color);
 }
 
+body.dark .span-externo-1,
+body.dark .span-externo-2,
+body.dark .span-externo-3 {
+  color: var(--white-color);
+}
+
 .span-externo-1::before,
 .span-externo-2::before,
 .span-externo-3::before {
@@ -570,11 +577,11 @@ body.dark .p-descripcion {
   left: 0;
   text-align: center;
   border: 0 solid;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--first-color);
   /* Duración y conteo de animación */
   animation-duration: 8s;
   animation-iteration-count: infinite;
-  animation-timing-function: ease-out;
+  animation-timing-function: ease-in;
 }
 
 body.dark .span-externo-1::before,
