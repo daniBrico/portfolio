@@ -67,7 +67,7 @@
 
     $loader.classList.remove("none");
 
-    fetch("https://formsubmit.co/ajax/239a0a2867adaec3608354ce97929b29", {
+    fetch("https://formsubmit.co/ajax/e09df0dd8452051535d4d7cdee38307c", {
       method: "POST",
       body: new FormData(e.target)
     })
