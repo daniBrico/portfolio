@@ -1,8 +1,8 @@
+const d = document
+
 // Menu
 
-// Lo estoy haciendo en una función anonima autoejecutable porque si este mismo menú lo implemento en otro proyecto, al tenerlo en una función de este tipo, que es un cerrada, está no colisionara en sus variables con las del otro proyecto si es que estas coinciden.
-
-;((d) => {
+const menu = function () {
   const $btnMenu = d.querySelector('.menu-button'),
     $menu = d.querySelector('.menu'),
     $scrollBtn = d.querySelector('.scroll-top-btn'),
@@ -53,10 +53,11 @@
       $scrollBtn.classList.add('hidden')
     }
   })
-})(document)
+}
 
-// Funcionamiento del formulario de contacto
-;((d) => {
+// Formulario de contacto
+
+const contactForm = function () {
   const $form = d.querySelector('.contact-form'),
     $loader = d.querySelector('.dots-container'),
     $ventanaModal = d.querySelector('.ventana-modal')
@@ -94,11 +95,9 @@
         }, 3000)
       })
   })
-})(document)
+}
 
 const generateDivSkills = function () {
-  const d = document
-
   const $templateSkill = d.getElementById('skill-template').content,
     $skillsContainer = d.getElementById('skills-container'),
     $fragment = d.createDocumentFragment()
@@ -131,4 +130,8 @@ const generateDivSkills = function () {
   $skillsContainer.appendChild($fragment)
 }
 
-generateDivSkills()
+document.addEventListener('DOMContentLoaded', () => {
+  menu()
+  contactForm()
+  generateDivSkills()
+})
