@@ -5,8 +5,9 @@
   --second-color: #444564;
   --fourth-color: #7c85b5;
   --white-color: #ffffff;
+  --gray-color: #cccccc;
   --black-alpha-color: rgba(0, 0, 0, 0.5);
-  --font: "Roboto Condensed", "sans-serif";
+  --font: 'Roboto Condensed', 'sans-serif';
   --max-width: 1088px;
   --header-height: 4rem;
   --box-shadow-aqua: 0.25rem 0.25rem 1rem rgba(27, 177, 191, 0.5);
@@ -103,7 +104,7 @@ section {
 
 /* Proyecto, cargando */
 
-.div-wave-efect {
+/* .div-wave-efect {
   position: relative;
   height: 3rem;
   display: flex;
@@ -167,7 +168,7 @@ body.dark .border {
       0% 100%
     );
   }
-}
+} */
 
 /* Loader */
 
@@ -270,7 +271,7 @@ body.dark .menu {
 }
 
 .menu a::after {
-  content: "";
+  content: '';
   height: 0.1rem;
   width: 0;
   position: absolute;
@@ -591,7 +592,7 @@ body.dark .span-externo-3::before {
 }
 
 .span-externo-1::before {
-  content: "Bienvenidos";
+  content: 'Bienvenidos';
   animation-name: span-externo-gradient-1;
 }
 
@@ -608,7 +609,7 @@ body.dark .span-externo-3::before {
 }
 
 .span-externo-2::before {
-  content: "a mi sitio";
+  content: 'a mi sitio';
   animation-name: span-externo-gradient-2;
 }
 
@@ -628,7 +629,7 @@ body.dark .span-externo-3::before {
 }
 
 .span-externo-3::before {
-  content: "web";
+  content: 'web';
   animation-name: span-externo-gradient-3;
 }
 
@@ -673,6 +674,7 @@ body.dark .titulo-principal {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   transition: transform 0.3s ease;
 }
 
@@ -697,9 +699,10 @@ body.dark .titulo-principal {
   display: grid;
   grid-template-columns: repeat(2, 30%);
   justify-content: center;
+  gap: 2rem;
 }
 
-/* Proyectos - Projects */
+/* Projects */
 
 body.dark .path-folder,
 body.dark .path-github,
@@ -717,26 +720,69 @@ body.dark .path-github {
 }
 
 .projects {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
-.projects div {
-  margin-top: 0.5rem;
+.projects-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.project {
+  padding: 1rem 0.7rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.div-titleAndLinks {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
-.projects div p {
-  margin-bottom: 1rem;
+.div-iconsLinksContainer {
+  display: flex;
+  gap: 0.2rem;
 }
 
-.projects svg {
-  width: 16rem;
-  margin: 0 auto;
+.div-iconsLinksContainer a {
+  display: flex;
+  cursor: pointer;
 }
 
-/* Contacto - Contact */
+.div-iconsLinksContainer img {
+  width: 1.6rem;
+}
+
+.div-iconsLinksContainer img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in;
+}
+
+.project h4 {
+  color: var(--first-color);
+  display: inline-block;
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.02rem;
+}
+
+.div-p-descriptionProject {
+  margin: 0.5rem 0;
+  text-wrap: balance;
+}
+
+.div-p-tecnologies {
+  font-size: 1rem;
+  color: var(--fourth-color);
+  letter-spacing: 0.03rem;
+}
+
+/* Contact */
 
 .contact {
   margin-top: 2rem;
@@ -796,19 +842,19 @@ body.dark .path-github {
 
 /* el cursor es default en vez de text (como debería ser) porque google chrome y edge, en el efecto hover, ponen transparente el cursor y no se ve. No pude solucionarlo a menos que quite las partículas */
 .contact-form textarea:hover,
-.contact-form input[type="text"]:hover,
-.contact-form input[type="email"]:hover {
+.contact-form input[type='text']:hover,
+.contact-form input[type='email']:hover {
   /* background-color: rgba(124, 133, 181, 0.3); */
   cursor: default;
 }
 
 .contact-form textarea,
-.contact-form input[type="text"],
-.contact-form input[type="email"] {
+.contact-form input[type='text'],
+.contact-form input[type='email'] {
   color: var(--first-color);
 }
 
-.contact-form input[type="submit"] {
+.contact-form input[type='submit'] {
   cursor: pointer;
   border-radius: 0.5rem;
   width: 9rem;
@@ -860,7 +906,7 @@ body.dark .modal-content h3 {
   color: var(--first-color);
 }
 
-.ventana-modal {
+.windows-modal {
   position: fixed;
   z-index: 9999;
   top: 0;
@@ -874,7 +920,7 @@ body.dark .modal-content h3 {
   transition: all 0.5s ease-in-out;
 }
 
-/* Pie de página - Footer */
+/* Footer */
 
 .footer {
   background-color: var(--fourth-color);
@@ -894,7 +940,7 @@ body.dark .footer {
   justify-content: space-between;
 }
 
-/* Botón scroll */
+/* Scroll button */
 
 .hidden {
   opacity: 0;
@@ -932,7 +978,7 @@ body.dark .scroll-top-btn {
 /* Media queries */
 
 @media screen and (min-width: 620px) {
-  /* Inicio - Home */
+  /* Home */
 
   .p-descripcion {
     margin-left: 4rem;
@@ -945,7 +991,11 @@ body.dark .scroll-top-btn {
     line-height: 8vw;
   }
 
-  /* Acerca - About */
+  /* About */
+
+  .skills-container {
+    grid-template-columns: repeat(3, 30%);
+  }
 
   h2 {
     font-size: 6.3vw;
@@ -967,14 +1017,10 @@ body.dark .scroll-top-btn {
     font-size: 2.5vw;
   }
 
-  /* Proyectos - Projects */
+  /* Projects */
 
-  .projects div p {
-    margin-top: 0.5rem;
-  }
-
-  .projects svg {
-    width: 25rem;
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
   }
 
   /* Contacto - Contact */
@@ -1022,7 +1068,7 @@ body.dark .scroll-top-btn {
     scroll-margin-top: 6rem;
   }
 
-  /* Inicio - Home */
+  /* Home */
 
   .div-image-title {
     flex-direction: row;
@@ -1073,7 +1119,7 @@ body.dark .scroll-top-btn {
     font-weight: bold;
   }
 
-  /* Acerca - About */
+  /* About */
 
   .about {
     margin-top: 4rem;
@@ -1108,23 +1154,28 @@ body.dark .scroll-top-btn {
   }
 
   .skills-container {
-    grid-template-columns: repeat(3, 30%);
+    grid-template-columns: repeat(4, 25%);
+    gap: 0;
   }
 
-  /* Proyectos - Projects */
+  /* Projects */
 
-  .projects svg {
-    width: 27rem;
+  .projects {
+    margin-top: 4rem;
   }
 
-  /* Contacto - Contact */
+  .projects h2 {
+    margin-bottom: 2rem;
+  }
+
+  /* Contact */
 
   .contact {
     margin-top: 4rem;
     margin-bottom: 1rem;
   }
 
-  .contact-form input[type="submit"] {
+  .contact-form input[type='submit'] {
     width: 12rem;
     font-size: 1.3rem;
   }
@@ -1149,7 +1200,7 @@ body.dark .scroll-top-btn {
     bottom: 3.2rem;
   }
 
-  /* Ventana modal */
+  /* Windows modal */
 
   .modal-content h3 {
     font-size: 3.9vw;
@@ -1157,7 +1208,7 @@ body.dark .scroll-top-btn {
 }
 
 @media screen and (min-width: 930px) {
-  /* Inicio - Home */
+  /* Home */
 
   .div-image-title img {
     width: 36vw;
@@ -1184,7 +1235,7 @@ body.dark .scroll-top-btn {
     font-size: 2.8vw;
   }
 
-  /* Acerca - About */
+  /* About */
 
   h2 {
     font-size: 5.8vw;
@@ -1206,7 +1257,7 @@ body.dark .scroll-top-btn {
     font-size: 21px;
   }
 
-  /* Ventana modal */
+  /* Windows modal */
 
   .modal-content h3 {
     font-size: 3.7vw;
@@ -1218,7 +1269,7 @@ body.dark .scroll-top-btn {
     box-shadow: none;
   }
 
-  /* Inicio - Home */
+  /* Home */
 
   .home .btn,
   .contact .btn {
@@ -1302,7 +1353,7 @@ body.dark .scroll-top-btn {
     line-height: 7.2vw;
   }
 
-  /* Acerca - About */
+  /*  About */
 
   h2 {
     font-size: 4.4vw;
@@ -1318,21 +1369,28 @@ body.dark .scroll-top-btn {
   }
 
   .skills-container {
-    display: grid;
-    grid-template-columns: repeat(3, 25%);
+    grid-template-columns: repeat(4, 25%);
   }
 
-  /* Proyectos - Projects */
+  /* Projects */
 
-  .projects svg {
-    width: 35rem;
+  .projects-container {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .projects div p {
-    margin-top: 1.5rem;
+  .div-iconsLinksContainer img {
+    width: 1.7rem;
   }
 
-  /* Contacto - Contact */
+  .project h4 {
+    font-size: 1.2rem;
+  }
+
+  .project p {
+    font-size: 1.2rem;
+  }
+
+  /* Contact */
 
   .contact-form {
     display: grid;
@@ -1349,7 +1407,7 @@ body.dark .scroll-top-btn {
     grid-column: span 2;
   }
 
-  .contact-form input[type="submit"] {
+  .contact-form input[type='submit'] {
     width: 15rem;
     font-size: 1.7rem;
   }
@@ -1360,7 +1418,7 @@ body.dark .scroll-top-btn {
     transform: rotate(calc(var(--i) * (360deg / 15))) translateY(20.5px);
   }
 
-  /* Pie de página - Footer */
+  /* Footer */
 
   .footer small {
     font-size: 1.2rem;
@@ -1372,7 +1430,7 @@ body.dark .scroll-top-btn {
     right: 2rem;
   }
 
-  /* Ventana modal */
+  /* Windows modal */
 
   .modal-content h3 {
     font-size: 3.2vw;
@@ -1386,7 +1444,7 @@ body.dark .scroll-top-btn {
     padding: 0;
   }
 
-  /* Inicio - Home */
+  /* Home */
 
   .titulo-principal {
     font-size: 110px;
@@ -1398,7 +1456,7 @@ body.dark .scroll-top-btn {
     font-size: 1.8vw;
   }
 
-  /* Acerca - About */
+  /*  About */
 
   .article-p {
     font-size: 25px;

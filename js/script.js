@@ -1,7 +1,5 @@
 const d = document
 
-// Menu
-
 const menu = function () {
   const $btnMenu = d.querySelector('.menu-button'),
     $menu = d.querySelector('.menu'),
@@ -55,8 +53,6 @@ const menu = function () {
   })
 }
 
-// Formulario de contacto
-
 const contactForm = function () {
   const $form = d.querySelector('.contact-form'),
     $loader = d.querySelector('.dots-container'),
@@ -103,14 +99,18 @@ const generateDivSkills = function () {
     $fragment = d.createDocumentFragment()
 
   const svgNames = [
+    'HTML',
     'CSS',
+    'JavaScript',
     'Figma',
     'GitHub',
-    'HTML',
     'Java',
-    'JavaScript',
+    'c',
     'Obsidian',
     'SQL',
+    'React.JS',
+    'Node.JS',
+    'tailwindcss',
   ]
 
   const route = './assets/svg'
@@ -130,8 +130,58 @@ const generateDivSkills = function () {
   $skillsContainer.appendChild($fragment)
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+const generateProjects = function () {
+  const $templateProject = d.getElementById('project-template').content,
+    $projectsContainer = d.getElementById('projects-container'),
+    $fragment = d.createDocumentFragment()
+
+  const projectsInformation = [
+    {
+      title: 'Take-attendance-app',
+      description: `Aplicación con características RTC que permite al profesor tomar asistencia en tiempo real a los alumnos pertenecientes a su curso y realizar otras acciones relacionadas al ambito acádemico, esto lo hace gracias a WebSockets con el modulo de socket-io y socket-io-client. <b>En desarrollo</b>`,
+      linkToPage: false,
+      repositoryLink: `https://github.com/daniBrico/take-attendance`,
+      tecnologies: `React.JS • Tailwindcss • Node.JS • MongoDB`,
+    },
+  ]
+
+  projectsInformation.forEach((project) => {
+    const $cloneTemplateProject = $templateProject.cloneNode(true)
+
+    $cloneTemplateProject
+      .querySelector('a')
+      .setAttribute('href', project.repositoryLink)
+
+    if (project.linkToPage) {
+      const $templateLinkToPage = d.getElementById(
+          'linkToPage-template'
+        ).content,
+        $cloneLinkToPageTemplate = $templateLinkToPage.cloneNode(true)
+
+      $cloneLinkToPageTemplate
+        .querySelector('a')
+        .setAttribute('href', project.linkToPage)
+
+      $cloneTemplateProject
+        .querySelector('.div-iconsLinksContainer')
+        .appendChild($cloneLinkToPageTemplate)
+    }
+
+    $cloneTemplateProject.querySelector('h4').textContent = project.title
+    $cloneTemplateProject.querySelector('.div-p-descriptionProject').innerHTML =
+      project.description
+    $cloneTemplateProject.querySelector('.div-p-tecnologies').textContent =
+      project.tecnologies
+
+    $fragment.appendChild($cloneTemplateProject)
+  })
+
+  $projectsContainer.appendChild($fragment)
+}
+
+d.addEventListener('DOMContentLoaded', () => {
   menu()
   contactForm()
   generateDivSkills()
+  generateProjects()
 })
