@@ -20,7 +20,7 @@ const menu = function () {
       $menu.classList.toggle('is-active')
     }
 
-    if (e.target.matches('.scroll-top-btn')) {
+    if (e.target.closest('.scroll-top-btn')) {
       window.scrollTo({
         behavior: 'smooth',
         top: 0,

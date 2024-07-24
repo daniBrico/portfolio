@@ -741,6 +741,11 @@ body.dark .path-github {
   background-color: #fff;
 }
 
+body.dark .project {
+  /* background-color: var(--gray-color); */
+  background-color: var(--fourth-color);
+}
+
 .div-titleAndLinks {
   display: flex;
   justify-content: space-between;
@@ -761,6 +766,10 @@ body.dark .path-github {
   width: 1.6rem;
 }
 
+.svg-githubcat {
+  fill: black;
+}
+
 .div-iconsLinksContainer img:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease-in;
@@ -770,19 +779,32 @@ body.dark .path-github {
   color: var(--first-color);
   display: inline-block;
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   letter-spacing: 0.02rem;
+}
+
+body.dark .project h4 {
+  color: var(--first-color);
 }
 
 .div-p-descriptionProject {
   margin: 0.5rem 0;
   text-wrap: balance;
+  font-size: 1rem;
+}
+
+body.dark .div-p-descriptionProject {
+  color: var(--first-color);
 }
 
 .div-p-tecnologies {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--fourth-color);
   letter-spacing: 0.03rem;
+}
+
+body.dark .div-p-tecnologies {
+  color: var(--first-color);
 }
 
 /* Contact */
@@ -953,6 +975,9 @@ body.dark .footer {
 }
 
 .scroll-top-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 1000;
   bottom: 3rem;
@@ -960,8 +985,6 @@ body.dark .footer {
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 2rem;
-  font-size: 1.5rem;
-  font-weight: bold;
   color: var(--white-color);
   background-color: var(--fourth-color);
   border: 0;
@@ -1059,7 +1082,6 @@ body.dark .scroll-top-btn {
   .scroll-top-btn {
     width: 3.2rem;
     height: 3.2rem;
-    font-size: 1.7rem;
   }
 
   /* Ventana modal */
@@ -1173,6 +1195,10 @@ body.dark .scroll-top-btn {
 
   .projects h2 {
     margin-bottom: 2rem;
+  }
+
+  .div-p-descriptionProject {
+    text-wrap: pretty;
   }
 
   /* Contact */
@@ -1386,15 +1412,19 @@ body.dark .scroll-top-btn {
   }
 
   .div-iconsLinksContainer img {
-    width: 1.7rem;
+    width: 1.8rem;
   }
 
   .project h4 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .div-p-descriptionProject {
     font-size: 1.2rem;
+  }
+
+  .div-p-tecnologies {
+    font-size: 1rem;
   }
 
   /* Contact */
