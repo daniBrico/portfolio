@@ -218,6 +218,7 @@ body.dark .border {
   text-align: center;
   padding: 0.5rem 0;
   transition: background-color 0.3s ease;
+  user-select: none;
 }
 
 .btn:hover {
@@ -303,6 +304,7 @@ body.dark .menu {
   background-color: var(--fourth-color);
   display: flex;
   justify-content: space-between;
+  user-select: none;
 }
 
 body.dark .header {
@@ -676,6 +678,7 @@ body.dark .titulo-principal {
   align-items: center;
   justify-content: space-between;
   transition: transform 0.3s ease;
+  user-select: none;
 }
 
 .div-skill:hover {
@@ -800,6 +803,7 @@ body.dark .path-github {
   max-width: 800px;
   background-color: var(--white-color);
   border-radius: 0.5rem;
+  user-select: none;
 }
 
 .contact-form > * {
@@ -925,6 +929,7 @@ body.dark .modal-content h3 {
 .footer {
   background-color: var(--fourth-color);
   transition: all 0.3s ease;
+  user-select: none;
 }
 
 body.dark .footer {
@@ -963,6 +968,7 @@ body.dark .footer {
   outline: 0;
   cursor: pointer;
   transition: all 0.3s ease;
+  user-select: none;
 }
 
 .scroll-top-btn:hover {
@@ -1094,6 +1100,7 @@ body.dark .scroll-top-btn {
 
   .programmer-svg {
     width: 19rem;
+    user-select: none;
   }
 
   .p-nombre {
@@ -1386,7 +1393,7 @@ body.dark .scroll-top-btn {
     font-size: 1.2rem;
   }
 
-  .project p {
+  .div-p-descriptionProject {
     font-size: 1.2rem;
   }
 
