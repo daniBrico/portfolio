@@ -723,7 +723,7 @@ body.dark .path-github {
 }
 
 .projects {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .projects-container {
@@ -732,6 +732,10 @@ body.dark .path-github {
   margin-top: 1rem;
   display: grid;
   gap: 0.8rem;
+}
+
+.projects-container h2 {
+  margin-bottom: 0.5rem;
 }
 
 .project {
@@ -810,7 +814,6 @@ body.dark .div-p-tecnologies {
 /* Contact */
 
 .contact {
-  margin-top: 2rem;
   margin-bottom: 0;
 }
 
