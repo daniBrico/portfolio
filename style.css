@@ -221,14 +221,6 @@ body.dark .border {
   user-select: none;
 }
 
-.btn:hover {
-  background-color: var(--second-color);
-}
-
-body.dark .btn:hover {
-  background-color: #595a83;
-}
-
 .padding {
   padding: 1rem;
 }
@@ -332,11 +324,6 @@ body.dark .header {
   transition: transform 0.3s ease;
 }
 
-.light-container-icon:hover,
-.language-container:hover {
-  transform: scale(1.15);
-}
-
 .light-container-icon svg {
   fill: var(--fourth-color);
   width: 1rem;
@@ -354,10 +341,6 @@ body.dark .light-container-icon svg {
   to {
     transform: rotate(360deg);
   }
-}
-
-.light-container-icon svg:hover {
-  animation: rotarInfinito 1.5s linear infinite;
 }
 
 .lang-mode-container {
@@ -681,10 +664,6 @@ body.dark .titulo-principal {
   user-select: none;
 }
 
-.div-skill:hover {
-  transform: scale(1.1);
-}
-
 .div-skill img {
   width: 3rem;
 }
@@ -768,15 +747,11 @@ body.dark .project {
 
 .div-iconsLinksContainer img {
   width: 1.6rem;
+  transition: transform 0.2s ease-in;
 }
 
 .svg-githubcat {
   fill: black;
-}
-
-.div-iconsLinksContainer img:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease-in;
 }
 
 .project h4 {
@@ -863,18 +838,6 @@ body.dark .div-p-tecnologies {
   border: thin solid rgba(0, 0, 0, 0.2);
   resize: none;
   border-radius: 0.2rem;
-}
-
-.div-socialMedia svg:hover {
-  transform: scale(1.1);
-}
-
-/* el cursor es default en vez de text (como debería ser) porque google chrome y edge, en el efecto hover, ponen transparente el cursor y no se ve. No pude solucionarlo a menos que quite las partículas */
-.contact-form textarea:hover,
-.contact-form input[type='text']:hover,
-.contact-form input[type='email']:hover {
-  /* background-color: rgba(124, 133, 181, 0.3); */
-  cursor: default;
 }
 
 .contact-form textarea,
@@ -997,17 +960,67 @@ body.dark .footer {
   user-select: none;
 }
 
-.scroll-top-btn:hover {
-  background-color: var(--second-color);
-  transform: scale(1.2);
-  box-shadow: var(--box-shadow-aqua);
-}
-
 body.dark .scroll-top-btn {
   background-color: var(--fourth-color);
 }
 
 /* Media queries */
+
+@media (hover: hover) {
+  .btn:hover {
+    background-color: var(--second-color);
+  }
+
+  body.dark .btn:hover {
+    background-color: #595a83;
+  }
+
+  /* Theme button */
+
+  .light-container-icon:hover,
+  .language-container:hover {
+    transform: scale(1.15);
+  }
+
+  .light-container-icon svg:hover {
+    animation: rotarInfinito 1.5s linear infinite;
+  }
+
+  /* Skills section */
+
+  .div-skill:hover {
+    transform: scale(1.1);
+  }
+
+  /* Projects section */
+
+  .div-iconsLinksContainer img:hover {
+    transform: scale(1.1);
+  }
+
+  .div-socialMedia svg:hover {
+    transform: scale(1.1);
+  }
+
+  /* Contact section */
+
+  /* el cursor es default en vez de text (como debería ser) porque google chrome y edge, en el efecto hover, ponen transparente el cursor y no se ve. No pude solucionarlo a menos que quite las partículas */
+
+  .contact-form textarea:hover,
+  .contact-form input[type='text']:hover,
+  .contact-form input[type='email']:hover {
+    /* background-color: rgba(124, 133, 181, 0.3); */
+    cursor: default;
+  }
+
+  /* Scroll top button */
+
+  .scroll-top-btn:hover {
+    background-color: var(--second-color);
+    transform: scale(1.2);
+    box-shadow: var(--box-shadow-aqua);
+  }
+}
 
 @media screen and (min-width: 620px) {
   /* Home */
