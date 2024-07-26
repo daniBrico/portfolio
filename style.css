@@ -342,6 +342,10 @@ body.dark .language-container span {
   color: var(--first-color);
 }
 
+.home b {
+  letter-spacing: 0.02rem;
+}
+
 body.dark .p-nombre {
   color: var(--white-color);
 }
@@ -584,6 +588,7 @@ body.dark .titulo-principal {
 .article-p {
   text-align: center;
   margin: 0 auto;
+  text-wrap: balance;
 }
 
 .div-skill {
