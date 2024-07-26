@@ -102,74 +102,6 @@ section {
   padding: 1rem;
 }
 
-/* Proyecto, cargando */
-
-/* .div-wave-efect {
-  position: relative;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.border,
-.wave {
-  position: absolute;
-}
-
-.border {
-  color: var(--white-color);
-  text-shadow: -1px -1px 0 var(--first-color), 1px -1px 0 var(--first-color),
-    1px 1px 0 var(--first-color), -1px 1px 0 var(--first-color);
-}
-
-.wave {
-  color: var(--first-color);
-  animation: wave 3s ease-in-out infinite;
-}
-
-body.dark .wave {
-  color: var(--white-color);
-}
-
-body.dark .border {
-  color: var(--first-color);
-  text-shadow: -0.5px -0.5px 0 var(--white-color),
-    0.5px -0.5px 0 var(--white-color), 0.5px 0.5px 0 var(--white-color),
-    -0.5px 0.5px 0 var(--white-color);
-}
-
-@keyframes wave {
-  0%,
-  100% {
-    clip-path: polygon(
-      0% 47%,
-      10% 48%,
-      33% 54%,
-      54% 60%,
-      70% 61%,
-      84% 59%,
-      100% 52%,
-      100% 100%,
-      0% 100%
-    );
-  }
-
-  50% {
-    clip-path: polygon(
-      0% 60%,
-      15% 65%,
-      34% 66%,
-      51% 62%,
-      67% 50%,
-      84% 45%,
-      100% 46%,
-      100% 100%,
-      0% 100%
-    );
-  }
-} */
-
 /* Loader */
 
 .div-input-loader {
@@ -686,15 +618,7 @@ body.dark .titulo-principal {
 
 /* Projects */
 
-body.dark .path-folder,
-body.dark .path-github,
-body.dark .path-link,
-body.dark .path-github {
-  fill: var(--white-color);
-}
-
 .path-folder,
-.path-github,
 .path-link,
 .path-linkedIn {
   fill: var(--fourth-color);
@@ -721,18 +645,16 @@ body.dark .path-github {
   padding: 1rem 0.7rem;
   border-radius: 0.5rem;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 body.dark .project {
-  /* background-color: var(--gray-color); */
   background-color: var(--fourth-color);
 }
 
 .div-titleAndLinks {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .div-iconsLinksContainer {
@@ -743,15 +665,28 @@ body.dark .project {
 .div-iconsLinksContainer a {
   display: flex;
   cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
-.div-iconsLinksContainer img {
-  width: 1.6rem;
+.svg-githubcat-project {
   transition: transform 0.2s ease-in;
 }
 
-.svg-githubcat {
-  fill: black;
+.githubcat-path-back {
+  fill: var(--fourth-color);
+}
+
+.githubcat-path-shape {
+  fill: var(--white-color);
+}
+
+body.dark .githubcat-path-back {
+  fill: var(--white-color);
+}
+
+body.dark .githubcat-path-shape {
+  fill: var(--fourth-color);
 }
 
 .project h4 {
@@ -868,17 +803,30 @@ body.dark .div-p-tecnologies {
   display: flex;
 }
 
-.div-socialMedia svg {
+.svg-githubcat-contact :nth-child(1) {
+  fill: var(--fourth-color);
+}
+
+.svg-githubcat-contact :nth-child(2) {
+  fill: var(--white-color);
+}
+
+.svg-linkedin-contact :nth-child(1) {
+  fill: var(--fourth-color);
+}
+
+.svg-linkedin-contact :nth-child(2) {
+  fill: var(--white-color);
+}
+
+.svg-linkedin-contact,
+.svg-githubcat-contact {
   width: 2rem;
   transition: transform 0.3s ease;
 }
 
 .div-socialMedia svg:first-child {
   margin-right: 0.5rem;
-}
-
-body.dark .div-socialMedia .path-github {
-  fill: var(--fourth-color);
 }
 
 /* Ventana modal de agradecimiento */
@@ -994,7 +942,7 @@ body.dark .scroll-top-btn {
 
   /* Projects section */
 
-  .div-iconsLinksContainer img:hover {
+  .svg-githubcat-project:hover {
     transform: scale(1.1);
   }
 
@@ -1427,8 +1375,9 @@ body.dark .scroll-top-btn {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .div-iconsLinksContainer img {
+  .div-iconsLinksContainer a {
     width: 1.8rem;
+    height: 1.8rem;
   }
 
   .project h4 {
