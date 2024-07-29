@@ -708,7 +708,7 @@ body.dark .project h4 {
 
 .div-p-descriptionProject {
   margin: 0.5rem 0;
-  text-wrap: balance;
+  text-wrap: pretty;
   font-size: 1rem;
 }
 

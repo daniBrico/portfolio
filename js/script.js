@@ -138,7 +138,7 @@ const generateProjects = function () {
   const projectsInformation = [
     {
       title: 'Take-attendance-app',
-      description: `Aplicación con características RTC que permite al profesor tomar asistencia en tiempo real a los alumnos pertenecientes a su curso y realizar otras acciones relacionadas al ambito acádemico, esto lo hace gracias a WebSockets con el modulo de socket-io y socket-io-client. <b>En desarrollo</b>`,
+      description: `Aplicación orientada al ambito académico que permite al profesor tomar asistencia en tiempo real a los alumnos adheridos al curso y realizar otras acciones relacionadas. Esto se logra gracias a WebSockets con el modulo de socket-io y socket-io-client. <b>En desarrollo</b>`,
       linkToPage: false,
       repositoryLink: `https://github.com/daniBrico/take-attendance`,
       tecnologies: `React.JS • Tailwindcss • Node.JS • MongoDB`,
