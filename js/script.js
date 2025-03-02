@@ -105,7 +105,7 @@ const generateDivSkills = function () {
     { svgName: 'figma', label: 'Figma' },
     { svgName: 'github', label: 'GitHub' },
     { svgName: 'java', label: 'Java' },
-    { svgName: 'c', label: 'c' },
+    { svgName: 'c', label: 'C' },
     { svgName: 'obsidian', label: 'Obisidian' },
     { svgName: 'sql', label: 'SQL' },
     { svgName: 'react', label: 'React' },
