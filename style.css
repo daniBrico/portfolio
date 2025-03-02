@@ -651,6 +651,9 @@ body.dark .titulo-principal {
   border-radius: 0.5rem;
   box-sizing: border-box;
   background-color: var(--white-color);
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
 }
 
 body.dark .project {

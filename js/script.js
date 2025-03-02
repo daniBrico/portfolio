@@ -99,30 +99,31 @@ const generateDivSkills = function () {
     $fragment = d.createDocumentFragment()
 
   const svgNames = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'Figma',
-    'GitHub',
-    'Java',
-    'c',
-    'Obsidian',
-    'SQL',
-    'React.JS',
-    'Node.JS',
-    'tailwindcss',
+    { svgName: 'html', label: 'HTML' },
+    { svgName: 'css', label: 'CSS' },
+    { svgName: 'javascript', label: 'JavaScript' },
+    { svgName: 'figma', label: 'Figma' },
+    { svgName: 'github', label: 'GitHub' },
+    { svgName: 'java', label: 'Java' },
+    { svgName: 'c', label: 'c' },
+    { svgName: 'obsidian', label: 'Obisidian' },
+    { svgName: 'sql', label: 'SQL' },
+    { svgName: 'react', label: 'React' },
+    { svgName: 'node', label: 'Node' },
+    { svgName: 'tailwindcss', label: 'tailwindcss' },
+    { svgName: 'typescript', label: 'TypeScript' },
   ]
 
   const route = './assets/svg'
 
-  svgNames.forEach((name) => {
+  svgNames.forEach((el) => {
     const $cloneTemplateSkill = $templateSkill.cloneNode(true),
       $img = $cloneTemplateSkill.querySelector('img')
 
-    $img.setAttribute('src', `${route}/${name}.svg`)
-    $img.setAttribute('alt', `Icono de ${name}`)
+    $img.setAttribute('src', `${route}/${el.svgName}.svg`)
+    $img.setAttribute('alt', `Icono de ${el.svgName}`)
 
-    $cloneTemplateSkill.querySelector('p').textContent = name
+    $cloneTemplateSkill.querySelector('p').textContent = el.label
 
     $fragment.appendChild($cloneTemplateSkill)
   })
@@ -142,6 +143,15 @@ const generateProjects = function () {
       linkToPage: false,
       repositoryLink: `https://github.com/daniBrico/take-attendance`,
       tecnologies: `React.JS • Tailwindcss • Node.JS • MongoDB`,
+    },
+    {
+      title: 'Tasks Calendar',
+      description:
+        'Calendario con diferentes funciones para Obsidian. Fue diseñado para mostrar las tareas definidas en las notas .md con las que esta herramienta trabaja. Obisidian permite, con ciertas limitaciones, ejecutar código HTML, CSS y JavaScript, dandole mucha libertad y creatividad a los usuarios para crear pequeñas aplicaciones.',
+      linkToPage: false,
+      repositoryLink: 'https://github.com/daniBrico/tasks-calendar',
+      tecnologies:
+        'HTML • CSS • JavaScript • Obsidian, plugin: Dataview, Tasks',
     },
   ]
 
@@ -180,6 +190,16 @@ const generateProjects = function () {
 }
 
 d.addEventListener('DOMContentLoaded', () => {
+  const currentDate = new Date()
+  const day = String(currentDate.getDate()).padStart(2, '0')
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0')
+  const year = currentDate.getFullYear()
+
+  const lastUpdateText = `Últ. Act. ${day}/${month}/${year}`
+
+  const $lastUpdate = d.getElementById('last-update')
+  $lastUpdate.textContent = lastUpdateText
+
   menu()
   contactForm()
   generateDivSkills()
