@@ -99,19 +99,19 @@ const generateDivSkills = function () {
     $fragment = d.createDocumentFragment()
 
   const svgNames = [
-    { svgName: 'html', label: 'HTML' },
-    { svgName: 'css', label: 'CSS' },
-    { svgName: 'javascript', label: 'JavaScript' },
-    { svgName: 'figma', label: 'Figma' },
-    { svgName: 'github', label: 'GitHub' },
-    { svgName: 'java', label: 'Java' },
-    { svgName: 'c', label: 'C' },
-    { svgName: 'obsidian', label: 'Obisidian' },
-    { svgName: 'sql', label: 'SQL' },
-    { svgName: 'react', label: 'React' },
-    { svgName: 'node', label: 'Node' },
-    { svgName: 'tailwindcss', label: 'tailwindcss' },
-    { svgName: 'typescript', label: 'TypeScript' },
+    { svgName: 'html-icon', label: 'HTML' },
+    { svgName: 'css-icon', label: 'CSS' },
+    { svgName: 'javascript-icon', label: 'JavaScript' },
+    { svgName: 'figma-icon', label: 'Figma' },
+    { svgName: 'github-icon', label: 'GitHub' },
+    { svgName: 'java-icon', label: 'Java' },
+    { svgName: 'c-icon', label: 'C' },
+    { svgName: 'obsidian-icon', label: 'Obisidian' },
+    { svgName: 'sql-icon', label: 'SQL' },
+    { svgName: 'react-icon', label: 'React' },
+    { svgName: 'node-icon', label: 'Node' },
+    { svgName: 'tailwindcss-icon', label: 'tailwindcss' },
+    { svgName: 'typescript-icon', label: 'TypeScript' },
   ]
 
   const route = './assets/svg'
