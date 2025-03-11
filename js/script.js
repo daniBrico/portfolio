@@ -153,6 +153,14 @@ const generateProjects = function () {
       tecnologies:
         'HTML • CSS • JavaScript • Obsidian, plugin: Dataview, Tasks',
     },
+    {
+      title: 'plan-de-estudios-web',
+      description:
+        'Aplicación web en donde se puede visualizar e interactuar con el plan de estudios de la carrera de Informática de la UNO. Utiliza una API conectada a una base de datos MongoDB para obtener la información de la carrera, y guarda las modificaciones realizadas por los usuarios en el Local Storage.',
+      linkToPage: 'https://plan-estudios-web-ts.onrender.com/',
+      repositoryLink: 'https://github.com/daniBrico/plan-estudios-web-ts',
+      tecnologies: 'React • TypeScript • TailwindCSS',
+    },
   ]
 
   projectsInformation.forEach((project) => {

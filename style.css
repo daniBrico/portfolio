@@ -651,9 +651,9 @@ body.dark .titulo-principal {
   border-radius: 0.5rem;
   box-sizing: border-box;
   background-color: var(--white-color);
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-between; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 body.dark .project {
@@ -677,7 +677,8 @@ body.dark .project {
   height: 1.5rem;
 }
 
-.svg-githubcat-project {
+.svg-githubcat-project,
+.link-to-page {
   transition: transform 0.2s ease-in;
 }
 
@@ -950,7 +951,8 @@ body.dark .scroll-top-btn {
 
   /* Projects section */
 
-  .svg-githubcat-project:hover {
+  .svg-githubcat-project:hover,
+  .link-to-page:hover {
     transform: scale(1.1);
   }
 
