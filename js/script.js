@@ -150,8 +150,7 @@ const generateProjects = function () {
         'Calendario con diferentes funciones para Obsidian. Fue diseñado para mostrar las tareas definidas en las notas .md con las que esta herramienta trabaja. Obisidian permite, con ciertas limitaciones, ejecutar código HTML, CSS y JavaScript, dandole mucha libertad y creatividad a los usuarios para crear pequeñas aplicaciones.',
       linkToPage: false,
       repositoryLink: 'https://github.com/daniBrico/tasks-calendar',
-      tecnologies:
-        'HTML • CSS • JavaScript • Obsidian, plugin: Dataview, Tasks',
+      tecnologies: 'HTML • CSS • JS • Obsidian: Dataview - Tasks',
     },
     {
       title: 'plan-de-estudios-web',

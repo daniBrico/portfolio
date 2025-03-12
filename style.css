@@ -175,6 +175,8 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
   transition: right 0.5s ease;
 }
 
@@ -190,7 +192,7 @@ body.dark .menu {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   color: var(--white-color);
   position: relative;
 }
@@ -651,9 +653,9 @@ body.dark .titulo-principal {
   border-radius: 0.5rem;
   box-sizing: border-box;
   background-color: var(--white-color);
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 body.dark .project {
@@ -663,6 +665,9 @@ body.dark .project {
 .div-titleAndLinks {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: max-content;
 }
 
 .div-iconsLinksContainer {
@@ -724,6 +729,7 @@ body.dark .div-p-descriptionProject {
   font-size: 0.8rem;
   color: var(--fourth-color);
   letter-spacing: 0.03rem;
+  align-self: flex-end;
 }
 
 body.dark .div-p-tecnologies {
