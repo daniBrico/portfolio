@@ -1,3 +1,5 @@
+// import { particlesConfig } from './particles'
+
 const d = document
 
 const menu = function () {
@@ -32,10 +34,15 @@ const menu = function () {
       e.target.closest('.light-container-icon')
     ) {
       d.body.classList.toggle('dark')
+
       if (d.body.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark')
+
         $svgLunaIcon.classList.add('none')
         $svgSolIcon.classList.remove('none')
       } else {
+        localStorage.setItem('theme', 'light')
+
         $svgLunaIcon.classList.remove('none')
         $svgSolIcon.classList.add('none')
       }
@@ -206,6 +213,12 @@ d.addEventListener('DOMContentLoaded', () => {
 
   const $lastUpdate = d.getElementById('last-update')
   $lastUpdate.textContent = lastUpdateText
+
+  const currentTheme = localStorage.getItem('theme')
+
+  !currentTheme
+    ? localStorage.setItem('theme', 'light')
+    : d.body.classList.add(currentTheme)
 
   menu()
   contactForm()
