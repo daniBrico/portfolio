@@ -204,16 +204,6 @@ const generateProjects = function () {
 }
 
 d.addEventListener('DOMContentLoaded', () => {
-  const currentDate = new Date()
-  const day = String(currentDate.getDate()).padStart(2, '0')
-  const month = String(currentDate.getMonth() + 1).padStart(2, '0')
-  const year = currentDate.getFullYear()
-
-  const lastUpdateText = `Últ. Act. ${day}/${month}/${year}`
-
-  const $lastUpdate = d.getElementById('last-update')
-  $lastUpdate.textContent = lastUpdateText
-
   const currentTheme = localStorage.getItem('theme')
 
   !currentTheme
