@@ -120,6 +120,8 @@ const generateDivSkills = function () {
     { svgName: 'tailwindcss-icon', label: 'tailwindcss' },
     { svgName: 'typescript-icon', label: 'TypeScript' },
     { svgName: 'mongodb-icon', label: 'MongoDB' },
+    { svgName: 'zustand-icon', label: 'Zustand' },
+    { svgName: 'express-icon', label: 'Express' },
   ]
 
   const route = './assets/svg'
