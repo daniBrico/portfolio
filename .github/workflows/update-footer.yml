@@ -23,7 +23,7 @@ jobs:
 
       - name: Obtener fecha del último commit (YYYY-MM-DD)
         run: |
-          LAST_UPDATE=$(git log -1 --format='%cd' --date=format:'%Y-%m-%d')
+          LAST_UPDATE=$(git log -1 --format='%cd' --date=format:'%d/%m/%Y')
           echo "LAST_UPDATE=$LAST_UPDATE" >> $GITHUB_ENV
 
       - name: Mostrar LAST_UPDATE (debug)
