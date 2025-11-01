@@ -34,7 +34,7 @@ jobs:
         run: |
           # asegurate de la ruta correcta de index.html (./index.html, ./docs/index.html, etc)
           if [ -f index.html ]; then
-            sed -i "s/{{LAST_UPDATE}}/$LAST_UPDATE/g" index.html
+            sed -i "s|{{LAST_UPDATE}}|$LAST_UPDATE|g" index.html
           else
             echo "index.html no encontrado en la raíz. Verifica la ruta."
             exit 1
