@@ -1,2 +1,46 @@
-- name: Obtener fecha del último commit
-  run: echo "LAST_UPDATE=$(git log -1 --format='%cd' --date=format:'%Y-%m-%d')" >> $GITHUB_ENV
+name: Actualizar fecha en el footer
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    # evita ejecutar las acciones cuando el actor sea el bot (previene loop)
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+        with:
+          # opcional: si querés todo el historial, poner fetch-depth: 0
+          fetch-depth: 1
+
+      - name: Obtener fecha del último commit (YYYY-MM-DD)
+        run: |
+          LAST_UPDATE=$(git log -1 --format='%cd' --date=format:'%Y-%m-%d')
+          echo "LAST_UPDATE=$LAST_UPDATE" >> $GITHUB_ENV
+
+      - name: Mostrar LAST_UPDATE (debug)
+        run: echo "Fecha: $LAST_UPDATE"
+
+      - name: Reemplazar placeholder en index.html
+        run: |
+          # asegurate de la ruta correcta de index.html (./index.html, ./docs/index.html, etc)
+          if [ -f index.html ]; then
+            sed -i "s/{{LAST_UPDATE}}/$LAST_UPDATE/g" index.html
+          else
+            echo "index.html no encontrado en la raíz. Verifica la ruta."
+            exit 1
+          fi
+
+      - name: Commit de los cambios (si los hay) y push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          # intenta commitear; si no hay cambios, git commit devolverá error que capturamos
+          git commit -m "Actualizar fecha del footer a $LAST_UPDATE" || echo "No hay cambios que commitear"
+          git push
