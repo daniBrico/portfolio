@@ -1,0 +1,2 @@
+- name: Obtener fecha del último commit
+  run: echo "LAST_UPDATE=$(git log -1 --format='%cd' --date=format:'%Y-%m-%d')" >> $GITHUB_ENV
