@@ -24,7 +24,8 @@ jobs:
           echo "LAST_UPDATE=$LAST_UPDATE" >> $GITHUB_ENV
 
       - name: Mostrar LAST_UPDATE (debug)
-        run: echo "Fecha: $LAST_UPDATE"
+        run: |
+          echo "Fecha: $LAST_UPDATE"
 
       - name: Reemplazar placeholder en index.html
         run: |
