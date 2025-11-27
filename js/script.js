@@ -113,7 +113,7 @@ const generateDivSkills = function () {
     { svgName: 'github-icon', label: 'GitHub' },
     { svgName: 'java-icon', label: 'Java' },
     { svgName: 'c-icon', label: 'C' },
-    { svgName: 'obsidian-icon', label: 'Obisidian' },
+    { svgName: 'obsidian-icon', label: 'Obsidian' },
     { svgName: 'sql-icon', label: 'SQL' },
     { svgName: 'react-icon', label: 'React' },
     { svgName: 'node-icon', label: 'Node' },
@@ -157,7 +157,7 @@ const generateProjects = function () {
     {
       title: 'Tasks Calendar',
       description:
-        'Calendario con diferentes funciones para Obsidian. Fue diseñado para mostrar las tareas definidas en las notas .md con las que esta herramienta trabaja. Obisidian permite, con ciertas limitaciones, ejecutar código HTML, CSS y JavaScript, dandole mucha libertad y creatividad a los usuarios para crear pequeñas aplicaciones.',
+        'Calendario con diferentes funciones para Obsidian. Fue diseñado para mostrar las tareas definidas en las notas .md con las que esta herramienta trabaja. Obsidian permite, con ciertas limitaciones, ejecutar código HTML, CSS y JavaScript, dandole mucha libertad y creatividad a los usuarios para crear pequeñas aplicaciones.',
       linkToPage: false,
       repositoryLink: 'https://github.com/daniBrico/tasks-calendar',
       tecnologies: 'HTML • CSS • JS • Obsidian: Dataview - Tasks',
