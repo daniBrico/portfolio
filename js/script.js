@@ -87,9 +87,8 @@ const contactForm = function () {
           err.statusText ||
           'Ocurrio un error al enviar el mensaje, intenta nuevamente'
 
-        $ventanaModal.querySelector(
-          'h3'
-        ).innerHTML = `Error ${error.statusText}:${message}`
+        $ventanaModal.querySelector('h3').innerHTML =
+          `Error ${error.statusText}:${message}`
       })
       .finally(() => {
         $loader.classList.add('none')
@@ -148,27 +147,21 @@ const generateProjects = function () {
 
   const projectsInformation = [
     {
-      title: 'Take-attendance-app',
-      description: `Aplicación orientada al ambito académico que permite al profesor tomar asistencia en tiempo real a los alumnos adheridos al curso y realizar otras acciones relacionadas. Esto se logra gracias a WebSockets con el modulo de socket-io y socket-io-client. <b>En desarrollo</b>`,
-      linkToPage: false,
-      repositoryLink: `https://github.com/daniBrico/take-attendance`,
-      tecnologies: `React.JS • Tailwindcss • Node.JS • MongoDB`,
-    },
-    {
-      title: 'Tasks Calendar',
-      description:
-        'Calendario con diferentes funciones para Obsidian. Fue diseñado para mostrar las tareas definidas en las notas .md con las que esta herramienta trabaja. Obsidian permite, con ciertas limitaciones, ejecutar código HTML, CSS y JavaScript, dandole mucha libertad y creatividad a los usuarios para crear pequeñas aplicaciones.',
-      linkToPage: false,
-      repositoryLink: 'https://github.com/daniBrico/tasks-calendar',
-      tecnologies: 'HTML • CSS • JS • Obsidian: Dataview - Tasks',
-    },
-    {
       title: 'plan-de-estudios-web',
       description:
-        'Aplicación web en donde se puede visualizar e interactuar con el plan de estudios de la carrera de Informática de la UNO. Utiliza una API conectada a una base de datos MongoDB para obtener la información de la carrera, y guarda las modificaciones realizadas por los usuarios en el Local Storage.',
+        'Aplicación web que permite visualizar e interactuar con el plan de estudios de la carrera de Informática de la UNO. Consume una API REST conectada a MongoDB para obtener la información de la carrera y persiste las modificaciones realizadas por los usuarios mediante Local Storage.',
       linkToPage: 'https://danibrico.github.io/plan-estudios-web-ts/',
       repositoryLink: 'https://github.com/daniBrico/plan-estudios-web-ts',
-      tecnologies: 'React • TypeScript • TailwindCSS',
+      tecnologies:
+        'React (zustand, zod, react router, tanstack query) • TypeScript • TailwindCSS',
+    },
+    {
+      title: 'api-plan-de-estudios-web',
+      description:
+        'API REST para la aplicación web de Plan de Estudios, con autenticación de usuarios mediante JWT y gestión de carreras. Implementa arquitectura MVC y un diseño modular y escalable. Aplica validaciones con Zod, gestión correcta de errores, middlewares y límite de consultas.',
+      repositoryLink: 'https://github.com/daniBrico/api-plan-de-estudios-ts',
+      tecnologies:
+        'Node • TypeScript • Express • MongoDB • JWT • Mongoose • Zod',
     },
   ]
 
@@ -181,7 +174,7 @@ const generateProjects = function () {
 
     if (project.linkToPage) {
       const $templateLinkToPage = d.getElementById(
-          'linkToPage-template'
+          'linkToPage-template',
         ).content,
         $cloneLinkToPageTemplate = $templateLinkToPage.cloneNode(true)
 
