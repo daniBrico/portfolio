@@ -770,7 +770,9 @@ body.dark .div-p-tecnologies {
   margin: 0.5rem auto;
   font-size: 0.85rem;
   font-family: var(--font);
-  transition: border-bottom 0.3s ease-in, border 0.3s ease-in;
+  transition:
+    border-bottom 0.3s ease-in,
+    border 0.3s ease-in;
 }
 
 .contact-form textarea:focus {
@@ -949,9 +951,9 @@ body.dark .scroll-top-btn {
     transform: scale(1.15);
   }
 
-  .light-container-icon svg:hover {
+  /* .light-container-icon svg:hover {
     animation: rotarInfinito 1.5s linear infinite;
-  }
+  } */
 
   /* Skills section */
 
