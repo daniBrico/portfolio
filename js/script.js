@@ -1,6 +1,15 @@
-// import { particlesConfig } from './particles'
-
 const d = document
+
+const changeExpressIcon = (theme) => {
+  const route = './assets/svg'
+  const $imgExpressIcon = d.getElementById('express-icon')
+
+  if (theme === 'dark') {
+    $imgExpressIcon.setAttribute('src', `${route}/express-icon-dark.svg`)
+  } else {
+    $imgExpressIcon.setAttribute('src', `${route}/express-icon-light.svg`)
+  }
+}
 
 const menu = function () {
   const $btnMenu = d.querySelector('.menu-button'),
@@ -36,16 +45,20 @@ const menu = function () {
       d.body.classList.toggle('dark')
 
       if (d.body.classList.contains('dark')) {
+        changeExpressIcon('dark')
         localStorage.setItem('theme', 'dark')
 
         $svgLunaIcon.classList.add('none')
         $svgSolIcon.classList.remove('none')
-      } else {
-        localStorage.setItem('theme', 'light')
 
-        $svgLunaIcon.classList.remove('none')
-        $svgSolIcon.classList.add('none')
+        return
       }
+
+      changeExpressIcon('light')
+      localStorage.setItem('theme', 'light')
+
+      $svgLunaIcon.classList.remove('none')
+      $svgSolIcon.classList.add('none')
     }
   })
 
@@ -109,7 +122,7 @@ const generateDivSkills = function () {
     { svgName: 'css-icon', label: 'CSS' },
     { svgName: 'javascript-icon', label: 'JavaScript' },
     { svgName: 'figma-icon', label: 'Figma' },
-    { svgName: 'github-icon', label: 'GitHub' },
+    { svgName: 'github-icon', label: 'Git/GitHub' },
     { svgName: 'java-icon', label: 'Java' },
     { svgName: 'c-icon', label: 'C' },
     { svgName: 'obsidian-icon', label: 'Obsidian' },
@@ -121,6 +134,10 @@ const generateDivSkills = function () {
     { svgName: 'mongodb-icon', label: 'MongoDB' },
     { svgName: 'zustand-icon', label: 'Zustand' },
     { svgName: 'express-icon', label: 'Express' },
+    { svgName: 'zod-logo', label: 'Zod' },
+    { svgName: 'tanstack-icon', label: 'Tanstack Query' },
+    { svgName: 'react-router-icon', label: 'React Router' },
+    { svgName: 'jest-icon', label: 'Jest' },
   ]
 
   const route = './assets/svg'
@@ -129,9 +146,17 @@ const generateDivSkills = function () {
     const $cloneTemplateSkill = $templateSkill.cloneNode(true),
       $img = $cloneTemplateSkill.querySelector('img')
 
-    $img.setAttribute('src', `${route}/${el.svgName}.svg`)
-    $img.setAttribute('alt', `Icono de ${el.svgName}`)
+    if (el.svgName === 'express-icon') {
+      $img.setAttribute(
+        'src',
+        `${route}/${d.body.classList.contains('dark') ? 'express-icon-dark' : 'express-icon-light'}.svg`,
+      )
+    } else {
+      $img.setAttribute('src', `${route}/${el.svgName}.svg`)
+      $img.setAttribute('alt', `Icono de ${el.svgName}`)
+    }
 
+    $img.setAttribute('id', `${el.svgName}`)
     $cloneTemplateSkill.querySelector('p').textContent = el.label
 
     $fragment.appendChild($cloneTemplateSkill)
