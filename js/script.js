@@ -138,6 +138,7 @@ const generateDivSkills = function () {
     { svgName: 'tanstack-icon', label: 'Tanstack Query' },
     { svgName: 'react-router-icon', label: 'React Router' },
     { svgName: 'jest-icon', label: 'Jest' },
+    { svgName: 'jwt-icon', label: 'JWT' },
   ]
 
   const route = './assets/svg'
