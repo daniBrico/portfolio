@@ -126,7 +126,6 @@ const generateDivSkills = function () {
     { svgName: 'java-icon', label: 'Java' },
     { svgName: 'c-icon', label: 'C' },
     { svgName: 'obsidian-icon', label: 'Obsidian' },
-    { svgName: 'sql-icon', label: 'SQL' },
     { svgName: 'react-icon', label: 'React' },
     { svgName: 'node-icon', label: 'Node' },
     { svgName: 'tailwindcss-icon', label: 'tailwindcss' },
@@ -139,6 +138,12 @@ const generateDivSkills = function () {
     { svgName: 'react-router-icon', label: 'React Router' },
     { svgName: 'jest-icon', label: 'Jest' },
     { svgName: 'jwt-icon', label: 'JWT' },
+    { svgName: 'linux-icon', label: 'Linux' },
+    { svgName: 'intellijidea-icon', label: 'IntelliJ IDEA' },
+    { svgName: 'vscode-icon', label: 'VS-Code' },
+    { svgName: 'postgresql-icon', label: 'PostgreSQL' },
+    { svgName: 'postman-icon', label: 'Postman' },
+    { svgName: 'spring-icon', label: 'Spring Boot' },
   ]
 
   const route = './assets/svg'
@@ -150,7 +155,7 @@ const generateDivSkills = function () {
     if (el.svgName === 'express-icon') {
       $img.setAttribute(
         'src',
-        `${route}/${d.body.classList.contains('dark') ? 'express-icon-dark' : 'express-icon-light'}.svg`,
+        `${route}/${d.body.classList.contains('dark') ? `${el.svgName}-dark` : `${el.svgName}-light`}.svg`,
       )
     } else {
       $img.setAttribute('src', `${route}/${el.svgName}.svg`)
