@@ -194,6 +194,12 @@ const generateProjects = function () {
       tecnologies:
         'Node • TypeScript • Express • MongoDB • JWT • Mongoose • Zod',
     },
+    {
+      title: 'api-ecommerce',
+      description:
+        'API REST para un sistema de e-commerce que gestiona usuarios, autenticación, productos y carrito de compras. Implementa seguridad basada en JWT, arquitectura en capas y buenas prácticas como uso de DTOs, manejo global de errores y validaciones, priorizando la escalabilidad, mantenibilidad y testing de la lógica de negocio.',
+      tecnologies: 'Java • Spring Boot • JWT • PostgreSQL • JPA/Hibernate',
+    },
   ]
 
   projectsInformation.forEach((project) => {
